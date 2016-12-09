@@ -1,10 +1,6 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Threading.Tasks;
-using System.Web.Configuration;
+﻿using System.Threading.Tasks;
 using System.Web.Mvc;
+using WebApiProject.Controllers.Api;
 using WebApiProject.Models;
 
 namespace WebApiProject.Controllers
@@ -12,15 +8,11 @@ namespace WebApiProject.Controllers
     //http://www.dotnetcurry.com/aspnet/1192/aspnet-web-api-async-calls-mvc-wpf
     public class HomeController : Controller
     {
-        HttpClient client;
+        KnockKnockController kctor;
         public HomeController()
         {
-            client = new HttpClient();
-            client.BaseAddress = new Uri(WebConfigurationManager.AppSettings["SwaggerApi"]);
-            client.DefaultRequestHeaders.Accept.Clear();
-            client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            kctor = new KnockKnockController();
         }
-
         [HttpGet]
         public ActionResult Index()
         {
@@ -29,57 +21,52 @@ namespace WebApiProject.Controllers
         }
 
         [HttpPost]
-        public ActionResult Index(SwaggerModel model)
+        [AsyncTimeout(150)]
+        [HandleError(ExceptionType = typeof(System.TimeoutException),
+                                    View = "TimeoutError")]
+        public async Task<ActionResult> Index(SwaggerModel model)
         {
-            var result = GetResult(model);
-            return View(result.Result); 
+            if (model != null)
+            {       
+                return View("Index", await GetResult(model));
+            }
+            return View(new SwaggerModel());
+        }
+
+        public ActionResult About()
+        {  
+            return View();
         }
 
 
 
-        public async Task<SwaggerModel> GetResult(SwaggerModel model)
+        /// <summary>
+        /// Get Result From Knock Knock readify API
+        /// </summary>
+        /// <param name="model"></param>
+        /// <returns></returns>
+        private async Task<SwaggerModel> GetResult(SwaggerModel model)
         {
-            if (model.Fibonacci.HasValue)
+            if (model != null)
             {
-                string str = WebConfigurationManager.AppSettings["SwaggerApi"] + "Fibonacci?n=" + model.Fibonacci;
-                HttpResponseMessage responseMessage = await client.GetAsync(WebConfigurationManager.AppSettings["SwaggerApi"] + "Fibonacci?n=" + model.Fibonacci);
-                if (responseMessage.IsSuccessStatusCode)
+                if (model.Fibonacci.HasValue)
                 {
-                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-                    model.FibonacciResult = JsonConvert.DeserializeObject<string>(responseData);
+                    model.FibonacciResult = await kctor.GetFibonacci(model.Fibonacci.GetValueOrDefault());                    
                 }
-            }
 
-            if (!string.IsNullOrEmpty(model.ReverseWords))
-            {
-                HttpResponseMessage responseMessage = await client.GetAsync(WebConfigurationManager.AppSettings["SwaggerApi"] + "ReverseWords?sentence=" + model.ReverseWords);
-                if (responseMessage.IsSuccessStatusCode)
+                if (!string.IsNullOrEmpty(model.ReverseWords))
                 {
-                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-                    model.ReverseWordsResult = JsonConvert.DeserializeObject<string>(responseData);
+                    model.ReverseWordsResult = await kctor.GetReverseWords(model.ReverseWords);
                 }
-            }
 
-            if (model.GetToken)
-            {
-                HttpResponseMessage responseMessage = await client.GetAsync(WebConfigurationManager.AppSettings["SwaggerApi"] + "Token");
-                if (responseMessage.IsSuccessStatusCode)
+                if (model.GetToken)
                 {
-                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-                    model.TokenResult = JsonConvert.DeserializeObject<string>(responseData);
+                    model.TokenResult = await kctor.GetToken();
                 }
-            }
 
-            if (model.TriangleType_a.HasValue && model.TriangleType_b.HasValue && model.TriangleType_c.HasValue)
-            {
-                HttpResponseMessage responseMessage = await client.GetAsync(WebConfigurationManager.AppSettings["SwaggerApi"] +
-                    String.Format("TriangleType?a={0}&b={1}&c={2}",
-                    model.TriangleType_a.HasValue, model.TriangleType_b, model.TriangleType_c));
-
-                if (responseMessage.IsSuccessStatusCode)
+                if (model.TriangleType_a.HasValue && model.TriangleType_b.HasValue && model.TriangleType_c.HasValue)
                 {
-                    var responseData = responseMessage.Content.ReadAsStringAsync().Result;
-                    model.TriangleTypeResult = JsonConvert.DeserializeObject<string>(responseData);
+                    model.TriangleTypeResult = await kctor.GetTriangleType(model.TriangleType_a.GetValueOrDefault(), model.TriangleType_b.GetValueOrDefault(), model.TriangleType_c.GetValueOrDefault());
                 }
             }
             return model;

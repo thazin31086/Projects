@@ -3,13 +3,13 @@
 
     angular
         .module("knockknockproject")
-        .controller("MainCtrl", [MainCtrl]);
+        .controller("MainCtrl", ["knockknockservice", MainCtrl]);
 
-    function MainCtrl() {
-        var vm = this;       
+    function MainCtrl(knockknockservice) {
+        var vm = this;
         vm.errmessage = '';
         vm.fibonacci = '';
-        vm.reversewords = '';        
+        vm.reversewords = '';
         vm.triangletype_a = '';
         vm.triangletype_b = '';
         vm.triangletype_c = '';
@@ -17,22 +17,55 @@
         vm.fibonacciresult = '';
         vm.reversewordsresult = '';
         vm.tokensresult = '';
-        vm.triangletyperesult = '';        
+        vm.triangletyperesult = '';
 
         vm.getFibonacci = function () {
-            vm.fibonacciresult = "Result";           
+            knockknockservice.Fibonacci.GetFibonacci({ n: vm.fibonacci },
+            function (data) {
+                vm.fibonacciresult = "Result: " + data;
+            },
+            function (response) {
+                vm.errmessage = response.statusText + "\r\n";
+                if (response.data.exceptionMessage)
+                    vm.errmessage += response.data.exceptionMessage;
+            });
         }
 
         vm.getReverse = function () {
-            vm.reversewordsresult = "Result";
+            knockknockservice.ReverseWords.GetReverseWords({ sentence: vm.reversewords },
+            function (data) {
+                vm.reversewordsresult = "Result: " + data;
+            },
+            function (response) {
+                vm.errmessage = response.statusText + "\r\n";
+                if (response.data.exceptionMessage)
+                    vm.errmessage += response.data.exceptionMessage;
+            });
         }
 
         vm.getToken = function () {
-            vm.tokensresult = "Result";
+            knockknockservice.Token.GetToken(null,
+            function (data) {
+                vm.tokensresult = "Result: " + data;
+            },
+            function (response) {
+                vm.errmessage = response.statusText + "\r\n";
+                if (response.data.exceptionMessage)
+                    vm.errmessage += response.data.exceptionMessage;
+            });
         }
 
         vm.gettriangletype = function () {
-            vm.triangletyperesult = "Result";
+
+            knockknockservice.TriangleType.GetTriangleType({ a: vm.triangletype_a, b: vm.triangletype_b, c: vm.triangletype_c },
+            function (data) {
+                vm.triangletyperesult = "Result: " + data;
+            },
+            function (response) {
+                vm.errmessage = response.statusText + "\r\n";
+                if (response.data.exceptionMessage)
+                    vm.errmessage += response.data.exceptionMessage;
+            });
         }
     }
 })();

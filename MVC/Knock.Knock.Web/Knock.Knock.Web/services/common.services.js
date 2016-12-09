@@ -6,6 +6,6 @@
                     ["ngResource"])
     	.constant("appSettings",
         {
-            serverPath: "http://localhost:52293https://knockknock.readify.net:443/"
+            serverPath: "https://knockknock.readify.net:443/"
         });
 }());

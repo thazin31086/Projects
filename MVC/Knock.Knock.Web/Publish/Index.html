@@ -1,0 +1,135 @@
+﻿<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Knock Knock</title>
+    <!-- Style sheets -->
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/site.css" rel="stylesheet" />
+</head>
+<body ng-app="knockknockproject"
+      ng-controller="MainCtrl as vm">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <div class="navbar-brand">Knock Knock Web Api Project</div>
+            </div>
+        </div>
+    </nav>
+    <div class="col-md-12">
+        <div>{{vm.errmessage}}</div>
+        <div class="bs-callout bs-callout-info">
+            <h4>GET /api/Fibonacci</h4>
+            <div class="row">
+                <div class="input-group">
+                    <div class="col-md-10">
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Enter Number"
+                               ng-model="vm.fibonacci">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit"
+                        class="btn btn-primary btn-block"
+                        ng-click="vm.getFibonacci()">
+                    Get Result
+                </button>
+            </div>
+            <div class="row">
+                <div class="text-success">{{vm.fibonacciresult}}</div>
+            </div>
+        </div>
+        <div class="bs-callout bs-callout-info">
+            <h4>GET /api/ReverseWords</h4>
+            <div class="row">
+                <div class="input-group">
+                    <div class="col-md-10">
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Enter Text"
+                               ng-model="vm.reversewords">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit"
+                        class="btn btn-primary btn-block"
+                        ng-click="vm.getReverse()">
+                    Get Result
+                </button>
+            </div>
+            <div class="row">
+                <div class="text-success">{{vm.reversewordsresult}}</div>
+            </div>
+        </div>
+        <div class="bs-callout bs-callout-info">
+            <h4>GET /api/Token</h4>
+            <div class="row">
+                <button type="submit"
+                        class="btn btn-primary btn-block"
+                        ng-click="vm.getToken()">
+                    Get Token
+                </button>
+            </div>
+            <div class="row">
+                <div class="text-success">{{vm.tokensresult}}</div>
+            </div>
+        </div>
+        <div class="bs-callout bs-callout-info">
+            <h4>GET /api/ReverseWords</h4>
+            <div class="row">
+                <div class="input-group">
+                    <div class="col-md-10">
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Enter Value 1"
+                               ng-model="vm.triangletype_a">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group">
+                    <div class="col-md-10">
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Enter Value 2"
+                               ng-model="vm.triangletype_b">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-group">
+                    <div class="col-md-10">
+                        <input type="text"
+                               class="form-control"
+                               placeholder="Enter Value 3"
+                               ng-model="vm.triangletype_c">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <button type="submit"
+                        class="btn btn-primary btn-block"
+                        ng-click="vm.gettriangletype()">
+                    Get Result
+                </button>
+            </div>
+            <div class="row">
+                <div class="text-success">{{vm.triangletyperesult}}</div>
+            </div>
+        </div>
+    </div>
+    <!-- Library Scripts -->
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-resource.js"></script>
+    <!-- Application Script -->
+    <script src="app/app.js"></script>
+    <!-- Services -->
+    <script src="services/common.services.js"></script>
+    <script src="services/knockknock.service.js"></script>
+    <!-- Product Controllers -->
+    <script src="app/mainCtrl.js"></script>
+</body>
+</html>

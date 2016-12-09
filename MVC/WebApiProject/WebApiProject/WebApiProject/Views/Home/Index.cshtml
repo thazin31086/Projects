@@ -13,78 +13,90 @@
             <div class="row">
                 <div class="form-group">
                     @Html.LabelFor(m => m.Fibonacci, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         @Html.TextBoxFor(m => m.Fibonacci, new { @class = "form-control" })
                     </div>
                 </div>
-                @if (!String.IsNullOrEmpty(Model.FibonacciResult))
+            </div>
+            @if (!String.IsNullOrEmpty(Model.FibonacciResult))
                 {
+                <div class="row">
                     <div class="alert alert-success" role="alert">
                         @Html.Raw("Result :") @Model.FibonacciResult
                     </div>
-                }
-            </div>
+                </div>
+            }
+
         </div>
         <div class="bs-callout bs-callout-info">
             <h4>GET /api/ReverseWords</h4>
             <div class="row">
                 <div class="form-group">
                     @Html.LabelFor(m => m.ReverseWords, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         @Html.TextBoxFor(m => m.ReverseWords, new { @class = "form-control" })
                     </div>
                 </div>
-
-                @if (!String.IsNullOrEmpty(Model.ReverseWords))
-                {
-                    <div class="alert alert-success" role="alert">
-                        @Html.Raw("Result :") @Model.ReverseWords
-                    </div>
-                }
             </div>
+            @if (!String.IsNullOrEmpty(Model.ReverseWords))
+                {
+                <div class="row">
+                    <div class="alert alert-success" role="alert">
+                        @Html.Raw("Result :") @Model.ReverseWordsResult
+                    </div>
+
+                </div>
+            }
         </div>
         <div class="bs-callout bs-callout-info">
             <h4>GET /api/Token</h4>
             <div class="row">
                 <div class="form-group">
                     @Html.LabelFor(m => m.GetToken, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
+                    <div class="col-md-12">
                         <label>@Html.RadioButtonFor(x => x.GetToken, "true") YES</label>
                         <label>@Html.RadioButtonFor(x => x.GetToken, "false") NO</label>
                     </div>
                 </div>
-                @if (!String.IsNullOrEmpty(Model.TokenResult))
+            </div>
+            @if (!String.IsNullOrEmpty(Model.TokenResult))
                 {
+                <div class="row">
                     <div class="alert alert-success" role="alert">
                         @Html.Raw("Result :") @Model.TokenResult
                     </div>
-                }
-            </div>
+                    }
+                </div>
+            }
+
+
         </div>
+
         <div class="bs-callout bs-callout-info">
             <h4>GET /api/TriangleType</h4>
             <div class="row">
                 @Html.LabelFor(m => m.TriangleType_a, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
+                <div class="col-md-12">
                     @Html.TextBoxFor(m => m.TriangleType_a, new { @class = "form-control" })
                 </div>
                 @Html.LabelFor(m => m.TriangleType_b, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
+                <div class="col-md-12">
                     @Html.TextBoxFor(m => m.TriangleType_b, new { @class = "form-control" })
                 </div>
                 @Html.LabelFor(m => m.TriangleType_c, new { @class = "col-md-2 control-label" })
-                <div class="col-md-10">
+                <div class="col-md-12">
                     @Html.TextBoxFor(m => m.TriangleType_c, new { @class = "form-control" })
                 </div>
-
-                @if (!String.IsNullOrEmpty(Model.TriangleTypeResult))
+            </div>
+            @if (!String.IsNullOrEmpty(Model.TriangleTypeResult))
                 {
+                <div class="row">
                     <div class="alert alert-success" role="alert">
                         @Html.Raw("Result :") @Model.TriangleTypeResult
                     </div>
-                }
-            </div>
+                </div>
+            }
         </div>
-        <button type="submit" class="btn btn-primary btn-block">Submit</button>
+        <button type="submit" class="btn btn-primary btn-block">Get Result</button>
     </div>
 }

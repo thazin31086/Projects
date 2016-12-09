@@ -178,6 +178,7 @@
     <Content Include="scripts\angular-cookies.min.js.map" />
     <Content Include="scripts\angular-aria.min.js.map" />
     <Content Include="scripts\angular-animate.min.js.map" />
+    <None Include="Properties\PublishProfiles\Publish.pubxml" />
     <None Include="scripts\jquery-1.9.1.intellisense.js" />
     <Content Include="scripts\bootstrap.js" />
     <Content Include="scripts\bootstrap.min.js" />
@@ -928,8 +929,10 @@
     <Content Include="scripts\jquery-1.9.1.js" />
     <Content Include="scripts\jquery-1.9.1.min.js" />
     <Content Include="services\common.services.js" />
-    <Content Include="services\knockknock.service.js" />
-    <Content Include="Web.config" />
+    <Content Include="services\knockknockservice.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="scripts\version.json" />
   </ItemGroup>
   <ItemGroup>
