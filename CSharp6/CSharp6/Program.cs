@@ -53,6 +53,11 @@ namespace CSharp6
 
             EnumConstReadonly();
             SwitchStatement();
+            Employee tony = new Employee();
+            tony.Income = 150000;
+            tony.YearOfService = 8;
+            tony.SetRating(Employee.Rating.excellent);
+            tony.CalRaise();
             Console.ReadLine();
         }
 
