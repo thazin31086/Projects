@@ -12,6 +12,14 @@ namespace CSharp6
            candrink = 21, 
            tooOld= 90
         }
+
+        enum Color
+        {
+            Red = 0,
+            Blue = 1,
+            Green = 2,
+            NoColor = 3
+        }
         static void Main(string[] args)
         {
             //String Interpolation example with variable 
@@ -44,6 +52,7 @@ namespace CSharp6
 
 
             EnumConstReadonly();
+            SwitchStatement();
             Console.ReadLine();
         }
 
@@ -69,6 +78,31 @@ namespace CSharp6
             }
             
 
+        }
+
+        ///Value Type (Stuct ), Reference Type (Class)
+
+        static void SwitchStatement()
+        {
+            Color _color = Color.NoColor;
+            switch (_color)
+            {
+                case Color.Blue:
+                    Console.WriteLine("Blue");
+                    break;
+                
+                case Color.Green:
+                    Console.WriteLine("Green");
+                    break;
+
+                case Color.Red:
+                    Console.WriteLine("Red");
+                    break;
+
+                default:
+                    Console.WriteLine("No Color");
+                    break;
+            }
         }
     }
 }
