@@ -4,6 +4,14 @@ namespace CSharp6
 {
     class Program
     {
+        //read only field can  be initialized either at the declaration of the field or in a constuctor, it can be used for run-time constant
+        readonly int _Age = 20;
+        enum Ages
+        {
+           oldenough = 5, 
+           candrink = 21, 
+           tooOld= 90
+        }
         static void Main(string[] args)
         {
             //String Interpolation example with variable 
@@ -34,7 +42,33 @@ namespace CSharp6
 
             } while (j < 0);
 
+
+            EnumConstReadonly();
             Console.ReadLine();
+        }
+
+
+        /// <summary>
+        /// Enum, Constant Exercise
+        /// </summary>
+        static void EnumConstReadonly()
+        {
+            //constant field can only be initialized at the declaration of the field, it is compile time constant 
+            const int Age = 90;
+            if (Age < (int)Ages.candrink)
+            {
+                Console.WriteLine("Sorry you are too young to play");
+            }
+            else if (Age > (int)Ages.tooOld)
+            {
+                Console.WriteLine("Sorry you are too old to play");
+            }
+            else
+            {
+                Console.WriteLine("Have Fun !!!");
+            }
+            
+
         }
     }
 }
