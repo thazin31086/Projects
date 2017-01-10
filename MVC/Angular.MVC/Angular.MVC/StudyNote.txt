@@ -8,10 +8,66 @@ Why Angular?
 
 Angular Syntax 
 ===============
-module -  is like namespace to create scope that contain a set of related objects 
-ng-app to define namespace 
-ng-controller pass controller
-$scope  is glue between view and model
+module 
+-------
+
+- is like namespace to create scope that contain a set of related objects 
+eg/
+    angular.module('app', []);  //Create brand new module call app 
+    angular.module('app'); //Get app module
+
+
+
+ng-app 
+-------
+- to define namespace 
+eg/ 
+<div ng-app="app"/>
+
+ng-controller
+-------------
+- pass controller
+
+eg/
+<div ng-app="app" ng-controller="ProductControler as vm"> </div>
+
+
+$scope 
+-------
+ - is a glue between view and controller. Can use this instead of $scope 
+ eg/ 
+
+ <div ng-app="app" ng-controller="ProductControler as vm">
+ </div>
+
+
+ (function(){
+   'use strict'; 
+	
+	angular.module('app')
+	  .controller('ProductController', ProductController);
+
+	function ProductController(){
+	 var vm = this; 
+
+	 vm.product = {
+	   ProductId: 1, 
+	   ProductName : 'Video Training'
+	 };
+	}
+ })();
+
+
+ data binding
+ -------------
+ binding data with {{}}
+
+ eg/
+  <div ng-app="app" ng-controller="ProductControler as vm">
+	<span>{{vm.product.ProductName}}</span>
+ </div>
+
+
 
 MVC vs MVVM 
 =============
@@ -24,32 +80,18 @@ MVVM - refinement of MVC and used to facliate pesentation separation by using se
 View and ViewModel communicate using methods, properties and events. Bi directional data binding.
 
 
-C# 6 Features. 
-===============
-
-String interpolation - variable subsitution, expansion
----------------------
- string color = "red"; 
- Console. WriteLine($"Color is {color}");
-
-Static Members Import
--------------------- 
-Using Static to import static members of the class into our namespace 
-eg . using static System.Console; 
-    public static void Main()
-
-    {
-
-        // Now, the System.Console static class is imported, so we
-
-        // can use WriteLine directly
-
-        WriteLine("Hello, World!");
-
-    }
-
-Demo 
-====
-Plurasight - Paul Training Company Project
+Javascript 
+===========
+Modernizr
+==========
+- repond to your user's browser features. it defects what HTML, CSS and JavaScript Features the user's browers has to offer
+- ensure user browser use latest features in broweser which support them
+use strict 
+===========
+- is new in JS 1.8.5 
+- is not a statement, but a literal expression 
+- purpose to indicate the code should be executed in "strict mode"
+- eg/ 
+	x= 3.14; // This will cause an error because x is not declared. 
 
 

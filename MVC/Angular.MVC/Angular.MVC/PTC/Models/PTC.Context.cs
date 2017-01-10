@@ -12,7 +12,7 @@ namespace PTC.Models
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
-    
+    using System.Data.Entity.ModelConfiguration.Conventions;
     public partial class PTCEntities : DbContext
     {
         public PTCEntities()
@@ -22,7 +22,8 @@ namespace PTC.Models
     
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            throw new UnintentionalCodeFirstException();
+            modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
+            //throw new UnintentionalCodeFirstException();
         }
     
         public virtual DbSet<Category> Categories { get; set; }
