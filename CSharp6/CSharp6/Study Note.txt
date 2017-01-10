@@ -1,1 +1,160 @@
 ﻿C# 6 
+
+Namespace 
+=========
+  - Define the scope for a set of related objects
+  - Using static is a new kind of using clause that lets you import static members of types directly to the scope
+
+  eg 
+    using system.console; 
+
+	static void Main(string[] args)
+        {
+		  WriteLine("Type sth"); 
+		  ReadLine();
+		}
+
+Modifier 
+========
+Public - can be seem and access by any method in your program 
+
+Private - can be only used by methods in the same class
+
+
+Word Captalization 
+====================
+camelCase - start with lower case 
+PascalCase - start with upper case
+
+Camel Case - Fields,Variables, parameters
+PascalCase - Constants, Properties use pascalcase
+
+Class
+=====
+- class is a reference type, it includes methods and properties. 
+  An instance of a class is called object
+
+- Class property type
+   - Full Property - has backing variable 
+     eg 
+	 private double income; 
+	 public double Income { 
+	  get {return name; } 
+	  set {name = value; }
+	 }
+
+
+      
+   - Automactic Property - shorthand for Full Property. same process as full property but shorter syntax 
+        public double Income { get; set; }
+   - Read Only (get or set)
+          public double Income { get;}
+		    
+   - Read only with Initiatlization 
+            public double Income { get;} = "Jasmine";
+
+
+- Method Overloading 
+   can define method in the same name as long as 
+    - they differ in no of para or/
+	- type of para
+
+	eg. 
+	public double computeSalary(double start){}
+	public double computeSalary(double start, double bonus){}
+	public double computeSalary(double start, string level){}
+
+ - Constutor 
+    use to create object and initilize your object to its starting state
+	has two types 
+	 - Default Constuctor - no parameters. if you do not any constructor to your class. 
+							Default constructor is provided for you.
+	 - Constructor with parameters 
+	eg 
+
+
+Static Methods
+==============
+
+- Caller method do not need to instantiate the class to call the method. 
+eg/
+public class TempartureControl
+    {
+        public static double CelsiusToFahrenheit(string tempCelsius)
+        {
+            double celsius = Double.Parse(tempCelsius);
+            double fahrenheit = (celsius * 9 / 5) + 32;
+            return fahrenheit;
+        }
+
+   }
+
+Caller method
+
+double c = TempartureControl.FahrenheitToCelsius(ReadLine());
+
+
+
+Inheritence 
+===========
+
+Create is-a relationship. 
+
+eg, Dog is a Animal, Cat is a Animal
+
+  Animal
+	 |
+ |	       |
+Dog		  Cat
+
+Derived class indicate base class with colon 
+
+public class Animal {}
+
+public class Dog : Animal {}
+
+public class Cat : Animal {}
+
+Containment 
+===========
+create has-a relationship 
+
+
+Class can contain properties and fields
+These case be build in or user defined type
+
+Fields are used to support the private method of the class 
+Properties are use to expose values to other classes
+
+eg. Book has a tableofcontents index and discount methods
+class Book {
+  public TableofContents tableofContents{get;set;}
+  public Index index {get;set;}
+  public virtual double Discount();
+}
+
+
+Polymorphism 
+=============
+
+Poly means many, Morph mean form == taking many forms
+- allow our classes and derived classes in many forms
+- we implement polymorophism using method overriding. 
+- we implement polymorophism using virtual and overridden methods
+- Derived and base classes can be treated polymorophism. 
+eg/
+class Book { 
+  public virtual double Discount();
+}
+
+Class Fiction : Book {
+   public override double Discount(){
+      base.Discount(); 
+	  //other work here
+   }
+}
+
+Encapsulation 
+===============
+is a concept where each class should have a single area of responsibility.
+

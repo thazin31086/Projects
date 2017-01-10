@@ -1,64 +1,77 @@
-﻿using System;
-
-namespace CSharp6
+﻿namespace CSharp6
 {
-    public class Employee
-    {
-        public enum Rating { poor, good, excellent }
-        private Rating rating;
-        public double Income { get; set; }
-        public int YearOfService { get; set; }
+    //public class Employee
+    //{
+    //    //#region private variables 
 
-        public void SetRating(Rating rating)
+    //    //private Rating rating;
+    //    //#endregion
+
+    //    //#region public variables 
+    //    //public enum Rating { poor, good, excellent }
+    //    //#endregion
+
+    //    //#region properties
+    //    //public int YearOfService { get; set; }
+    //    //public int Office { get; set; }
+    //    //public double Income { get; set; }
+
+    //    //#endregion
+
+    //    //#region methods
+    //    //public Employee()
+    //    //{
+
+    //    //}
+    //    //public Employee(int yearOfService, int office)
+    //    //{
+    //    //    this.YearOfService = yearOfService;
+    //    //    this.Office = office; 
+    //    //}
+
+    //    //public void SetRating(Rating rating)
+    //    //{
+    //    //    this.rating = rating;
+    //    //}
+
+    //    //public void CalRaise()
+    //    //{
+    //    //    double baseRaise = Income * 0.5;
+    //    //    double bonus = YearOfService * 1000;
+    //    //    Income += baseRaise + bonus;
+    //    //    switch (rating)
+    //    //    {
+    //    //        case Rating.poor:
+    //    //            Income -= YearOfService * 2000;  
+    //    //            break;
+    //    //        case Rating.good:
+    //    //            break;
+    //    //        case Rating.excellent:
+    //    //            Income += YearOfService * 500;
+    //    //            break;
+    //    //    }
+    //    //    Console.WriteLine($"New Income is {Income}");
+
+    //    //}
+
+    //    //#endregion
+    //}
+
+    public class Employee {
+        public string Name { get; set; }
+        protected double VacationDays; 
+
+        public virtual void TakeVacation() { }
+
+        public Employee(string name)
         {
-            this.rating = rating;
+            Name = name;
         }
 
-        public void CalRaise()
+        public override string ToString()
         {
-            double baseRaise = Income * 0.5;
-            double bonus = YearOfService * 1000;
-            Income += baseRaise + bonus;
-            switch (rating)
-            {
-                case Rating.poor:
-                    Income -= YearOfService * 2000;  
-                    break;
-                case Rating.good:
-                    break;
-                case Rating.excellent:
-                    Income += YearOfService * 500;
-                    break;
-            }
-            Console.WriteLine($"New Income is {Income}");
-
+            return $"[Employee: Name = {Name}]";
         }
+
     }
 }
-/*
-
-Modifier 
-========
-Public - can be seem and access by any method in your program 
-
-Private - can be only used by methods in the same class
- 
-Class 
-=====
-class is a reference type, it includes methods and properties
-an instance of a class is called object 
-
-Method
-====== 
-is a chunk of code that does sth(modify object, cal, )
-it can take information using parameters 
-it can return a value
-
-Word Captalization 
-====================
-camelCase - start with lower case 
-PascalCase - start with upper case
-
-Camel Case - Fields,Variables, parameters
-PascalCase - Constants, Properties use pascalcase
-*/
