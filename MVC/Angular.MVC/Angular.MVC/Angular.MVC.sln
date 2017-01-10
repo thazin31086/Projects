@@ -5,7 +5,7 @@ VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FFE28FAD-D963-497E-9F89-19DCEA55119E}"
 	ProjectSection(SolutionItems) = preProject
-		ReadMe.txt = ReadMe.txt
+		StudyNote.txt = StudyNote.txt
 	EndProjectSection
 EndProject
 Global
