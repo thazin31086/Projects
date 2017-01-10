@@ -9,6 +9,9 @@ Why Angular?
 Angular Syntax 
 ===============
 module -  is like namespace to create scope that contain a set of related objects 
+ng-app to define namespace 
+ng-controller pass controller
+$scope  is glue between view and model
 
 MVC vs MVVM 
 =============
