@@ -42,7 +42,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AbstractDemo\Button.cs" />
+    <Compile Include="AbstractDemo\Control.cs" />
+    <Compile Include="AbstractDemo\ListBox.cs" />
+    <Compile Include="AbstractDemo\Worker.cs" />
+    <Compile Include="CollectionDemo\ArrayDemo\Person.cs" />
+    <Compile Include="CollectionDemo\ArrayDemo\Worker.cs" />
+    <Compile Include="CollectionDemo\DictionaryDemo\Person.cs" />
+    <Compile Include="CollectionDemo\DictionaryDemo\Worker.cs" />
+    <Compile Include="CollectionDemo\ListDemo\Person.cs" />
+    <Compile Include="CollectionDemo\ListDemo\Worker.cs" />
     <Compile Include="Employee.cs" />
+    <Compile Include="InterfaceDemo\Document.cs" />
+    <Compile Include="InterfaceDemo\ISpeak.cs" />
+    <Compile Include="InterfaceDemo\IStorable.cs" />
+    <Compile Include="InterfaceDemo\Memo.cs" />
+    <Compile Include="InterfaceDemo\Worker.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

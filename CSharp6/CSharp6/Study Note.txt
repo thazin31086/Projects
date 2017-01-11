@@ -158,3 +158,63 @@ Encapsulation
 ===============
 is a concept where each class should have a single area of responsibility.
 
+Exception 
+=============
+is object . Base of System.Exception.
+Call Stack : is the list of methods that called methods that called other methods
+Exception unwind the call stack until it find exception handler
+if cannot find exception handler, program crash
+eg/ 
+ int c = b / (a- b); //if a-b is zero than it crash 
+
+Exception handler //Prevent the Crash
+------------------
+eg/
+try{
+int a = 1, b = 1;
+int c = b / (a- b); //if a-b is zero than it crash 
+
+}catch{
+  Console.WriteLine("Oop, Attempts to divide by zero");
+}
+
+Collection 
+===========
+Array - Must declare size 
+foreach - useful whne loop through all the collection 
+List<T>, IList<T>
+--------
+eg/
+IList<T> - is an Interface. You cannot initiate it directly
+List<T> - is concrete class which implements IList<T>. 
+
+It is good approach to use Ilist<T> in you public facing API
+
+List<Person> people = new List<Person>();
+
+Dictionary<K,V>
+---------------
+eg/
+   Dictionary<string, Person> dic = new Dictionary<string, Person>();
+   dic.Add("george", new Person { Name = "George W", Age = 55 });
+
+
+Interface & Abstract
+====================
+
+Interface 
+---------
+is a contract.
+has three parts: Interface class, Implementer class, Client Class that calls methods on the implementer
+
+
+Abstract 
+---------
+Abstract class :
+ - consist of abstract methods that must be overridden to create a concrete class.
+ = abstract class cannot be instantiated. has at least one abstract method 
+
+Concrete class:
+ - act as base to other classes  
+ - can be initiated
+ - cannot hae abstract methods

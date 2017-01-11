@@ -1,6 +1,4 @@
-﻿using CSharp6.StaticDemo;
-using System.Collections.Generic;
-using static System.Console;
+﻿using static System.Console;
 
 namespace CSharp6
 {
@@ -163,7 +161,7 @@ namespace CSharp6
                         break;
                 }
             }
-            */
+            
 
             Employee bob = new Worker("Bob", 35.00);
             Employee joe = new Manager("Joe", true);
@@ -180,6 +178,35 @@ namespace CSharp6
                 employees[i].TakeVacation();
                 WriteLine(employees[i]);
             }
+            #region try-catch Example
+            Worker w = new Worker();
+            #endregion
+
+            
+
+            #region Array Ex
+            CSharp6.CollectionDemo.Worker worker = new CSharp6.CollectionDemo.Worker();
+            
+            #endregion
+            
+            #region List Ex
+            CSharp6.CollectionDemo.ListDemo.Worker worker = new CSharp6.CollectionDemo.ListDemo.Worker();
+            #endregion
+            
+
+
+            #region Dictionary Ex
+            CSharp6.CollectionDemo.DictionaryDemo.Worker worker = new CSharp6.CollectionDemo.DictionaryDemo.Worker();
+            #endregion
+
+            #region Interface Ex
+            CSharp6.InterfaceDemo.Worker worker = new CSharp6.InterfaceDemo.Worker();
+            #endregion
+            */
+
+            #region Abstract Ex
+            CSharp6.AbstractDemo.Worker worker = new CSharp6.AbstractDemo.Worker();
+            #endregion
             ReadLine();
                 
                
