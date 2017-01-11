@@ -141,28 +141,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\Category.cs">
-      <DependentUpon>PTC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\Product.cs">
-      <DependentUpon>PTC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PTC.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PTC.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PTC.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PTC.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PTC.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>PTC.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="Models\PTCEntities.cs" />
+    <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\PTCContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\PTCViewModel.cs" />
   </ItemGroup>
@@ -175,29 +156,12 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\site.css" />
-    <Content Include="Models\PTC.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PTC.edmx</DependentUpon>
-      <LastGenOutput>PTC.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Models\PTC.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>PTC.edmx</DependentUpon>
-      <LastGenOutput>PTC.cs</LastGenOutput>
-    </Content>
     <Content Include="Readme.txt" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular.js" />
     <Content Include="Scripts\angular.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <EntityDeploy Include="Models\PTC.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>PTC.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="Models\PTC.edmx.diagram">
-      <DependentUpon>PTC.edmx</DependentUpon>
-    </Content>
     <Content Include="Scripts\angular.min.js.map" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
