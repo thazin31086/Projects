@@ -118,30 +118,7 @@ namespace PTC
         public void LoadSearchCategories()
         {
 
-            string connectionString = ConfigurationManager.ConnectionStrings["PTCEntities"].ToString();
-            //using (SqlConnection con = new SqlConnection(connectionString))
-            //{
-            //    SqlCommand command = new SqlCommand(
-            //      "SELECT CategoryID, CategoryName FROM Category",
-            //      con);
-            //    con.Open();
-
-            //    SqlDataReader reader = command.ExecuteReader();
-
-            //    if (reader.HasRows)
-            //    {
-            //        while (reader.Read())
-            //        {
-            //            Console.WriteLine("{0}\t{1}", reader.GetInt32(0),
-            //                reader.GetString(1));
-            //        }
-            //    }
-            //    else
-            //    {
-            //        Console.WriteLine("No rows found.");
-            //    }
-            //    reader.Close();
-            //}
+            string connectionString = ConfigurationManager.ConnectionStrings["PTCEntities"].ToString();           
             
             PTCContext db = new PTCContext();
             

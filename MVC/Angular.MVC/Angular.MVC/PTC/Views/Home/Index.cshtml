@@ -7,6 +7,8 @@
 @using (Html.BeginForm()) {
   <div ng-app="app" 
        ng-controller="ProductController as vm"> 
+
+    <span>{{vm.product.ProductName}}</span>
     <!-- ** BEGIN HIDDEN FIELDS AREA ** -->
     @Html.HiddenFor(m => m.EventCommand)
     @Html.HiddenFor(m => m.EventArgument)
@@ -153,10 +155,26 @@
           </tr>
         </thead>
 
-        <tbody>          
-            <tr ng-repeat="product in vm.products">
+          <tbody>
+              <tr ng-repeat="product in vm.products">
+                  <td class="pdsa-action-button-column">
+                      <a href="#" class="btn btn-default btn-sm">
+                          <i class="glyphicon glyphicon-edit"></i>
+                      </a>
+                  </td>
+                  <td>{{product.ProductName}}</td>
+                  <td>{{product.IntroductionDate | date: 'MM/dd/yyyy'}}</td>
+                  <td>{{product.Url}}</td>
+                  <td>{{product.Price | currency:'$'}}</td>
+                  <td class="pdsa-action-button-column">
+                      <a href="#" onclick="return confirm('Delete this Product?')">
+                          <i class="glyphicon glyphicon-trash"></i>
+                      </a>
+                  </td>
+              </tr>
+              @*<tr ng-repeat="product in vm.products">
               <td class="pdsa-action-button-column">
-                <a href="#" 
+                <a href="#"
                    class="btn btn-default btn-sm">
                   <i class="glyphicon glyphicon-edit"></i>
                 </a>
@@ -166,15 +184,15 @@
               <td>{{product.Url}}</td>
               <td>{{product.Price | currency: '$'}}</td>
               <td class="pdsa-action-button-column">
-                <a href="#" 
+                <a href="#"
                    onclick="return confirm('Delete this Product?');"
                    class="btn btn-default btn-sm">
                   <i class="glyphicon glyphicon-trash"></i>
                 </a>
               </td>
 
-            </tr>         
-        </tbody>
+            </tr>*@
+          </tbody>
       </table>
     </div>
     <!-- ** END LIST AREA ** -->
