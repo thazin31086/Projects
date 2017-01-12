@@ -1,5 +1,4 @@
-﻿using System.Collections.Generic;
-using static System.Console;
+﻿using static System.Console;
 
 namespace CSharp6
 {
@@ -208,10 +207,9 @@ namespace CSharp6
             #region Abstract Ex
             CSharp6.AbstractDemo.Worker worker = new CSharp6.AbstractDemo.Worker();
             #endregion
+           
 
-            */
-
-            #region Tenary Operator
+            #region Statments(Tenary Operator, Null Conditional, Coalescing Operator)
             int? x = null;
             WriteLine($"x is null: {x}");
 
@@ -229,9 +227,12 @@ namespace CSharp6
 
             ReadLine();
             #endregion
+             */
 
-
-
+            #region Async Thread Ex
+            CSharp6.ThreadDemo.Worker worker = new CSharp6.ThreadDemo.Worker();
+            #endregion 
+            ReadLine();
         }
     }
 }

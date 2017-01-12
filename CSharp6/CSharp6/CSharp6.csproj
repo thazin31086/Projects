@@ -61,6 +61,7 @@
     <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ThreadDemo\Worker.cs" />
     <Compile Include="Worker.cs" />
   </ItemGroup>
   <ItemGroup>
