@@ -1,0 +1,39 @@
+Android
+=======
+SDK Location : C:\Users\aungt\AppData\Local\Android\sdk
+In android, SDK version are known as API level. 
+eg. android 5 -> loiipop, API level 21 
+    android  7 --> Nougat, API level 25, 24 
+
+To work with Android, reference Mono.Android library 
+
++++++++android app structure+++++++++
+Application level - app consist of multiple activities. 
+activity is a class inherit from base activity.
+
+activity state/s
+---------------- 
+
+Running State- when activity launched
+Paused - activity is sleep. 
+
+
+App Life Cycle
+------------ 
+OnCreate - call once when application is start
+  |
+OnStart - call after create
+   |
+OnResume - call right before user interact with activity
+
+OnPause - call when user not interacting with activity. 
+		  Activity is still in memory
+OnStop - call when current activity is no longer active activity. 
+
+OnDestory - Activity is only destory by activity
+
+
+View
+-----
+View in android is written in axml file 
+DPI - Dots Per Inch
