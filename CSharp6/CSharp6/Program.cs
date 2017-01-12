@@ -1,4 +1,5 @@
-﻿using static System.Console;
+﻿using System.Collections.Generic;
+using static System.Console;
 
 namespace CSharp6
 {
@@ -202,15 +203,35 @@ namespace CSharp6
             #region Interface Ex
             CSharp6.InterfaceDemo.Worker worker = new CSharp6.InterfaceDemo.Worker();
             #endregion
-            */
+            
 
             #region Abstract Ex
             CSharp6.AbstractDemo.Worker worker = new CSharp6.AbstractDemo.Worker();
             #endregion
+
+            */
+
+            #region Tenary Operator
+            int? x = null;
+            WriteLine($"x is null: {x}");
+
+            List<string> authors = null;
+            int? count = authors?.Count;
+            WriteLine(count == null ? "Count is null" : "Count is not null");
+
+            //Ternary operator (? :)
+            WriteLine("Before --> How Many: " + authors?.Count.ToString() ?? "0");
+
+            authors = new List<string>(){ "author 1", "author 2" };
+
+            //Null Coalescing Operator 
+            WriteLine("After --> How Many: " + authors?.Count.ToString() ?? 0.ToString());
+
             ReadLine();
-                
-               
-           
+            #endregion
+
+
+
         }
     }
 }

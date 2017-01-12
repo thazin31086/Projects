@@ -218,3 +218,18 @@ Concrete class:
  - act as base to other classes  
  - can be initiated
  - cannot hae abstract methods
+
+
+ Statement 
+ =========
+
+ Ternary operator (? :)
+ ---------------
+ - Shorthand if/else statement
+ eg/ int bigger = x > y ? x: y; 
+ - 
+
+ Coalescing operator (??)
+ --------------------
+
+x  ?? 0 - mean x not null return x, if null return Zero.
