@@ -3,7 +3,7 @@ Android
 SDK Location : C:\Users\aungt\AppData\Local\Android\sdk
 In android, SDK version are known as API level. 
 eg. android 5 -> loiipop, API level 21 
-    android  7 --> Nougat, API level 25, 24 
+	android  7 --> Nougat, API level 25, 24 
 
 To work with Android, reference Mono.Android library 
 

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:minWidth="25px"
+    android:minHeight="25px"
+    android:background="#FCD972"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/HotDogScrollView">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_height="100dp"
+            android:id="@+id/HotDogImageView"
+            android:layout_gravity="center_horizontal"
+            android:layout_width="match_parent" />
+        <TextView
+            android:text="Hot Dog Name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/HotDogNameTextView"
+            android:paddingTop="20dp"
+            android:textSize="20dp"
+            android:textColor="@android:color/black" />
+        <TextView
+            android:text="Short Description"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/ShortDescriptionTextView"
+            android:paddingTop="20dp"
+            android:textSize="16dp"
+            android:textColor="@android:color/black" />
+        <TextView
+            android:text="A hot dog is a cooked sausage, traditionally grilled or steamed and served in a sliced bun as a sandwich. Hot dog variants include the corn dog and pigs in blankets. "
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/DescriptionTextView"
+            android:editable="false"
+            android:paddingTop="20dp"
+            android:textSize="12dp"
+            android:textColor="@android:color/black" />
+        <TextView
+            android:text="Price :111"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/PriceTextView"
+            android:paddingTop="20dp"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@android:color/black" />
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:text="Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/CancelButton"
+                android:layout_alignParentLeft="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp" />
+            <EditText
+                android:inputType="number"
+                android:text="1"
+                android:layout_width="30dp"
+                android:layout_height="40dp"
+                android:id="@+id/amountEditText"
+                android:background="@android:color/white"
+                android:textColor="@android:color/black"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true" />
+            <Button
+                android:text="Order now!"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/OrderButton"
+                android:layout_alignParentRight="true"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="20dp" />
+        </RelativeLayout>
+    </LinearLayout>
+</ScrollView>
