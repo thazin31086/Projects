@@ -68,7 +68,19 @@ $scope
  </div>
 
 
+ filter 
+ ---------
+ aLike search in all property
+ -----------------------------
+ eg/<tr ng-repeat="product in vm.products | filter:vm.searchInput.productName"></tr>
 
+ Single property search 
+ ----------------------
+ eg/<tr ng-repeat="product in vm.products | filter: {ProdudctName: vm.searchInput.productName}"></tr>
+
+ Specify function on scope to search
+ -----------------------------------
+ eg/<tr ng-repeat="product in vm.products | filter: vm.searchImmediate"></tr>
 MVC vs MVVM 
 =============
 MVC - Model View Controller Framework for easier to test and maitain. 

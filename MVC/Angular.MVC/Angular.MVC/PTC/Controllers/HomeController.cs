@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 
 namespace PTC.Controllers
 {
-  public class HomeController : Controller
+    public class HomeController : Controller
   {
     public ActionResult Index()
     {
