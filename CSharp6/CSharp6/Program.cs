@@ -227,11 +227,26 @@ namespace CSharp6
 
             ReadLine();
             #endregion
-             */
+            
 
-            #region Async Thread Ex
-            CSharp6.ThreadDemo.Worker worker = new CSharp6.ThreadDemo.Worker();
-            #endregion 
+            //#region Async Thread Ex
+            //CSharp6.ThreadDemo.Worker worker = new CSharp6.ThreadDemo.Worker();
+            //#endregion 
+
+
+
+            #region Delegate
+            CSharp6.DelegateDemo.Worker worker = new CSharp6.DelegateDemo.Worker();
+            #endregion            
+            */
+
+            //#region Event Delegate
+            //CSharp6.DelegateDemo.EventsDelegateDemo.Worker worker = new CSharp6.DelegateDemo.EventsDelegateDemo.Worker();
+            //#endregion 
+
+            #region Control Event Delete
+            CSharp6.DelegateDemo.ButtoneEventsDelegate.Worker worker = new CSharp6.DelegateDemo.ButtoneEventsDelegate.Worker();
+            #endregion
             ReadLine();
         }
     }

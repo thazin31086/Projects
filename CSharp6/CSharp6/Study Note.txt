@@ -6,10 +6,10 @@ Namespace
   - Using static is a new kind of using clause that lets you import static members of types directly to the scope
 
   eg 
-    using system.console; 
+	using system.console; 
 
 	static void Main(string[] args)
-        {
+		{
 		  WriteLine("Type sth"); 
 		  ReadLine();
 		}
@@ -36,7 +36,7 @@ Class
 
 - Class property type
    - Full Property - has backing variable 
-     eg 
+	 eg 
 	 private double income; 
 	 public double Income { 
 	  get {return name; } 
@@ -44,19 +44,19 @@ Class
 	 }
 
 
-      
+	  
    - Automactic Property - shorthand for Full Property. same process as full property but shorter syntax 
-        public double Income { get; set; }
+		public double Income { get; set; }
    - Read Only (get or set)
-          public double Income { get;}
-		    
+		  public double Income { get;}
+			
    - Read only with Initiatlization 
-            public double Income { get;} = "Jasmine";
+			public double Income { get;} = "Jasmine";
 
 
 - Method Overloading 
    can define method in the same name as long as 
-    - they differ in no of para or/
+	- they differ in no of para or/
 	- type of para
 
 	eg. 
@@ -65,7 +65,7 @@ Class
 	public double computeSalary(double start, string level){}
 
  - Constutor 
-    use to create object and initilize your object to its starting state
+	use to create object and initilize your object to its starting state
 	has two types 
 	 - Default Constuctor - no parameters. if you do not any constructor to your class. 
 							Default constructor is provided for you.
@@ -79,13 +79,13 @@ Static Methods
 - Caller method do not need to instantiate the class to call the method. 
 eg/
 public class TempartureControl
-    {
-        public static double CelsiusToFahrenheit(string tempCelsius)
-        {
-            double celsius = Double.Parse(tempCelsius);
-            double fahrenheit = (celsius * 9 / 5) + 32;
-            return fahrenheit;
-        }
+	{
+		public static double CelsiusToFahrenheit(string tempCelsius)
+		{
+			double celsius = Double.Parse(tempCelsius);
+			double fahrenheit = (celsius * 9 / 5) + 32;
+			return fahrenheit;
+		}
 
    }
 
@@ -149,7 +149,7 @@ class Book {
 
 Class Fiction : Book {
    public override double Discount(){
-      base.Discount(); 
+	  base.Discount(); 
 	  //other work here
    }
 }
@@ -234,5 +234,11 @@ Concrete class:
 
 x  ?? 0 - mean x not null return x, if null return Zero.
 
-Threads
+Delegate
 ========
+Delegate is reference to a method.
+Usage
+------
+It is a great way to encapsulate the code. 
+Eg, when you attached the delegate event to button, button does not nee to know what it does. 
+
