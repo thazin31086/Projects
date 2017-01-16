@@ -71,6 +71,8 @@
     <Compile Include="InterfaceDemo\IStorable.cs" />
     <Compile Include="InterfaceDemo\Memo.cs" />
     <Compile Include="InterfaceDemo\Worker.cs" />
+    <Compile Include="LamdaDemo\Worker.cs" />
+    <Compile Include="LINQDemo\Worker.cs" />
     <Compile Include="Manager.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

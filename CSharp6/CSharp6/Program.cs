@@ -244,8 +244,16 @@ namespace CSharp6
             //CSharp6.DelegateDemo.EventsDelegateDemo.Worker worker = new CSharp6.DelegateDemo.EventsDelegateDemo.Worker();
             //#endregion 
 
-            #region Control Event Delete
-            CSharp6.DelegateDemo.ButtoneEventsDelegate.Worker worker = new CSharp6.DelegateDemo.ButtoneEventsDelegate.Worker();
+            //#region Control Event Delete
+            //CSharp6.DelegateDemo.ButtoneEventsDelegate.Worker worker = new CSharp6.DelegateDemo.ButtoneEventsDelegate.Worker();
+            //#endregion
+
+            //#region  Delegate Lamda 
+            //CSharp6.LamdaDemo.Worker worker = new CSharp6.LamdaDemo.Worker();
+            //#endregion
+
+            #region  Delegate Lamda 
+            CSharp6.LINQDemo.Worker worker = new CSharp6.LINQDemo.Worker();
             #endregion
             ReadLine();
         }
