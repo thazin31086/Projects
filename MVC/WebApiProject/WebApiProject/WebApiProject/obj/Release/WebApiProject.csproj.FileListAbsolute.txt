@@ -72,3 +72,4 @@ C:\JasmineAung\Exercise\Projects\MVC\WebApiProject\WebApiProject\WebApiProject\b
 C:\JasmineAung\Exercise\Projects\MVC\WebApiProject\WebApiProject\WebApiProject\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\JasmineAung\Exercise\Projects\MVC\WebApiProject\WebApiProject\WebApiProject\obj\Release\WebApiProject.dll
 C:\JasmineAung\Exercise\Projects\MVC\WebApiProject\WebApiProject\WebApiProject\obj\Release\WebApiProject.pdb
+C:\JasmineAung\Exercise\Projects\MVC\WebApiProject\WebApiProject\WebApiProject\obj\Release\WebApiProject.csprojResolveAssemblyReference.cache

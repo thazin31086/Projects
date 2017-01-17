@@ -32,8 +32,8 @@ namespace WebApiProject.Controllers.Api
         public async Task<string> GetToken()
         {
             using (var client = new HttpClient())
-            {
-                return await client.GetStringAsync(WebConfigurationManager.AppSettings["SwaggerApi"] + "Token");
+            {                
+                return await client.GetStringAsync(WebConfigurationManager.AppSettings["MyToken"]);
             }
             return "No Result";           
         }

@@ -11,11 +11,9 @@
         vm.searchImmediate = searchImmediate;
         vm.search = search;
         vm.products = [];
-        vm.product = {
-            ProductId: 1,
-            ProductName: 'Video Training'
-        };
-        vm.searchCategories = [];
+        vm.product = {};
+        vm.categories = [];
+        vm.searchCategories = [];      
         vm.searchInput = {
             selectedCategory: {
                 CategoryId: 0,
@@ -23,9 +21,68 @@
             },
             productName: ''
         };
+        vm.addClick = addClick;
+        vm.editClick = editClick;
+        vm.cancelClick = cancelClick;
+        vm.deleteClick = deleteClick;
+        vm.saveClick = saveClick;
+       
+
+        const pageMode = {
+            LIST: 'List',
+            EDIT: 'Edit',
+            ADD: 'Add'
+        }
+        vm.uiState = {
+            mode: pageMode.LIST,
+            isDetailAreaVisible: false,
+            isListAreaVisible : true, 
+            isSearchAreaVisible :true, 
+            isValid:true, 
+            messages:[]
+        }
 
         productList();
         searchCategoriesList();
+        categoryList();
+
+        function initEntity() {
+            return {
+                ProductId: 0,
+                ProductName: '',
+                IntroductionDate:
+                    new Date().toLocaleDateString(),
+                Url: 'http://www.pdsa.com',
+                Price: 0,
+                Category: {
+                    CategoryId: 1,
+                    CategoryName: ''
+                }
+            }
+        }
+        function setUIState(state) {
+            vm.uiState.mode = state;
+            vm.uiState.isDetailAreaVisible = (state == pageMode.ADD || state == pageMode.EDIT);
+            vm.uiState.isListAreaVisible = (state == pageMode.LIST);
+            vm.uiState.isSearchAreaVisible = (state == pageMode.LIST);
+        }
+        function addClick() {
+            vm.product = initEntity();
+            setUIState(pageMode.ADD);
+        }
+        function editClick(id) {
+            setUIState(pageMode.EDIT);
+        }
+        function cancelClick() {
+            setUIState(pageMode.LIST);
+        }
+        function deleteClick(id) {
+            if (confirm("Delete this product?")) {               
+            }
+        }
+        function saveClick() {
+            setUIState(pageMode.LIST);
+        }
 
         function searchImmediate(item) {
             if ((vm.searchInput.selectedCategory.CategoryId == 0 ? true : vm.searchInput.selectedCategory.CategoryId == item.Category.CategoryId) &&
@@ -34,6 +91,23 @@
             }
 
             return false;
+        }
+        function search() {
+         
+            var searchEntity = {
+                CategoryId: vm.searchInput.selectedCategory.CategoryId,
+                ProductName: vm.searchInput.productName
+            };
+
+            dataService.post("api/Product/Search", searchEntity).
+                then(function () {
+                    vm.products = result.data;
+                    setUIState(pageMode.LIST);
+                },
+                function (error) { handleException(error); }
+
+            );
+
         }
         function resetSearch() {
             vm.searchInput = {
@@ -46,17 +120,8 @@
 
             productList();
         }
-        function productList() {
-            dataService.get("/api/Product")
-            .then(function (result) {
-                vm.products = result.data;
-            },
-            function (error) {
-                handleException(error);
-            });
-        }
         function searchCategoriesList() {
-            dataService.get("/api/Categroy/GetSearchCategories")
+            dataService.get("/api/Category/GetSearchCategories")
             .then(function (result) {
                 vm.searchCategories = result.data;
             },
@@ -64,25 +129,56 @@
                 handleException(error);
             });
         }
-        function search() {
-         
-            var searchEntity = {
-                CategoryId: vm.searchInput.selectedCategory.CategoryId,
-                ProductName: vm.searchInput.productName
-            };
 
-            dataService.post("api/Product/Search", searchEntity).
-                then(function () {
-                    vm.products = result.data;
-                },
-                function (error) { handleException(error); }
-
-            );
-
+        function productList() {
+            dataService.get("/api/Product")
+            .then(function (result) {
+                vm.products = result.data;
+                setUIState(pageMode.LIST);
+            },
+            function (error) {
+                handleException(error);
+            });
         }
+        function categoryList() {
+            dataService.get("/api/Category")
+              .then(function (result) {
+                  vm.categories = result.data;
+              }, function (error) {                
+                  handleException(error);
+              })
+        }
+             
+        
         function handleException(error) {
-            alert(error.data.ExceptionMessage);
+            vm.uiState.isValid = false;
+            vm.uiState.messages = [];
+            var msg = {
+                property: 'Error',
+                message: ''
+            };
+           
+            switch (error.status) {
+                case 400:
+                    //bad request
+                    break;
+                case 404:
+                    //Not Found
+                    msg.message = 'The product you were ' +
+                                  'requesting could not be found';
+                    vm.uiState.messages.push(msg);
+                    break;
+                case 500: //Internal error
+                    msg.message = error.data.ExceptionMessage;
+                    vm.uiState.messages.push(msg);
+                    break;
+                default:
+                    msg.message = 'Status:' + error.status +
+                                    ' - Error Message:' +
+                                    error.statusText;
+                    vm.uiState.messages.push(msg);
+                    break;
+            }            
         }
-
     }
 })();

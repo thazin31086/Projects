@@ -2,8 +2,24 @@
 
 namespace PTC.Controllers_Api
 {
-    public class CategroyController : ApiController
+    public class CategoryController : ApiController
     {
+        [HttpGet]        
+        public IHttpActionResult GetCategories() {
+
+            IHttpActionResult ret = null;
+            PTCViewModel vm = new PTCViewModel();
+            vm.LoadCategories();
+            if (vm.Categories.Count > 0)
+            {
+                ret = Ok(vm.Categories);
+            }
+            else {
+                ret = NotFound();
+            }
+            return ret;
+        }
+
         [HttpGet]
         [Route("api/Categroy/GetSearchCategories")]
         public IHttpActionResult GetSearchCategories()
