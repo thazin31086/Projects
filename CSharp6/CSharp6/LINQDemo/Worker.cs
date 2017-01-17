@@ -49,6 +49,27 @@ namespace CSharp6.LINQDemo
             {
                 WriteLine(item);
             }
+
+            WriteLine("Task 5");
+            WriteLine("\n-------\n");
+            var take5 = serialnum.Take(5).Select(x => x * 10);
+            foreach (var item in take5)
+            {
+                Write($"{item} ,");
+            }
+
+            WriteLine("Zip Demo");
+            WriteLine("\n-------\n");
+            List<string> codes = new List<string> { "AL", "AK", "AZ", "AR", "CA", "CO", "CT" };
+            List<string> states = new List<string> { "Alabama", "Alaska", "Arizona", "Califonia", "Colorado", "Connecticut" };
+
+            var codeWithState = codes.Zip(states, (code, state) => $"{code} : {state}");
+
+            foreach (var item in codeWithState)
+            {
+                WriteLine($"{item}");
+            }
+
         }
     }
 }
