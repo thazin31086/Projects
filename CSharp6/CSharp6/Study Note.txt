@@ -242,3 +242,6 @@ Usage
 It is a great way to encapsulate the code. 
 Eg, when you attached the delegate event to button, button does not nee to know what it does. 
 
+LINQ - Language Integrated Query
+=====
+Operator -> Zip used to product sequence of results from two corresponding sequence.
