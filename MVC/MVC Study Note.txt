@@ -1,6 +1,7 @@
 Study Link
-
+============
 http://www.webdevelopmenthelp.net/2014/06/asp-net-mvc-pass-data-controller-view.html
+http://www.webdevelopmenthelp.net/2013/09/top-asp-net-mvc-interview-questions.html#Q4
 
 MVC 3
  - Support HTML 2 and CSS 3
@@ -10,3 +11,70 @@ MVC 3
 
 Controller --> View
            ---> Model ---> View
+
+What is MVC ? 
+-------------
+ MVC is software architectural pattern that separates an application into three main logical components Model, View and Controller 
+ Model - corresponds to all the data related logic that the user works. The data is being transferred between View, Controllers and components
+ View - used of all the UI logic of the application 
+ Contoller - controller act as interface between Model and View Components
+
+Maintain State between a Controller
+------------------------------------
+ Below options can be used with MVC
+  - ViewData 
+  - ViewBag
+  - TempData
+  - Model
+
+
+ ViewData and ViewBag are single server called (meaning value will be null if redirect occurs). To maintain state from once controller to another then tempData can be used
+
+ ViewData and ViewBag serve the same purpose, View Data is dictionary object and require typecating and null checks. ViewBag is dynamic property that doesn't have typecasting and null check. ViewBag is dynamic time as it can introduce runtime error. 
+
+What is ASP.NET MVC? 
+--------------------
+
+ASP.NET MVC is a web development framework that is based on MVC architectural design pattern. 
+
+Difference ASP.NET MVC and ASP.NET Web Form 
+--------------------------------------------
+Web form uses page controller approach where every page has its wo page controller (eg, code behind file that process the request)
+
+MVC use common controller for every page. 
+
+Core Features of ASP.NET MVC?
+-----------------------------
+- Clear separation of application concerns (Presentation and Business Logice). Make it ideal for large scale application where multiple teams are working
+- URL routing is more user-friendly
+
+- Supporting existing ASP.NET features like membership, role, authentication and authorization, caching etc.
+
+- Action Methods - In MVC, controllers have specific methods to perform user action. Request coming to controller search for specific action method. Action methods perform operation using model and return result back to view as viewresult.
+By default, all public methods in controller are considerred as action method unless method is marked it with [NoAction] Attribute
+
+eg/
+
+[NoAction]
+public void MyNonActionMethod()
+{
+
+}
+
+- ActionResults 
+  There are many built-in actionresults type can be applied in action methods
+    - ViewResult
+    - PartialViewResult
+    - RedirectResult
+    - RedirectToRouteResule
+    - ContentResult
+    - JsonResult
+    - EmptyResult
+  
+
+ 
+
+
+
+
+
