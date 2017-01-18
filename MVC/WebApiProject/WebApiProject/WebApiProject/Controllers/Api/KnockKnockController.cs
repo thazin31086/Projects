@@ -33,7 +33,7 @@ namespace WebApiProject.Controllers.Api
         {
             using (var client = new HttpClient())
             {                
-                return await client.GetStringAsync(WebConfigurationManager.AppSettings["MyToken"]);
+                return await client.GetStringAsync(WebConfigurationManager.AppSettings["WhatIsYourToken"]);
             }
             return "No Result";           
         }

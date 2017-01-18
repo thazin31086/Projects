@@ -5,7 +5,7 @@ using Android.Widget;
 
 namespace Xamarin.App.Droid
 {
-	[Activity (Label = "Jasmine", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "Jasmine",Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
 		int count = 1;

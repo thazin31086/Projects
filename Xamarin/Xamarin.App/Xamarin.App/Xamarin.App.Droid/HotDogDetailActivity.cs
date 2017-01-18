@@ -8,7 +8,7 @@ using Xamarin.App.Service;
 
 namespace Xamarin.App.Droid
 {
-    [Activity(Label = "Hot Dog Detail", MainLauncher =true)]
+    [Activity(Label = "Hot Dog Detail")]
     public class HotDogDetailActivity : Activity
     {
         private ImageView hotDogImageView;

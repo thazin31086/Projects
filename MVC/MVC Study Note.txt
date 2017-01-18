@@ -1,0 +1,12 @@
+Study Link
+
+http://www.webdevelopmenthelp.net/2014/06/asp-net-mvc-pass-data-controller-view.html
+
+MVC 3
+ - Support HTML 2 and CSS 3
+ - Model Validation 
+ - Razor View Engine 
+  - Controller Improvments Like ViewBag Dynamic Property
+
+Controller --> View
+           ---> Model ---> View
