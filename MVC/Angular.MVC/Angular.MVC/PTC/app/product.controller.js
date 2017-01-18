@@ -78,13 +78,13 @@
             setUIState(pageMode.LIST);
         }
         function deleteClick(id) {
-            if (confirm("Delete this product?")) {               
+            if (confirm("Delete this product?")) {
+                deleteData(id);
             }
         }
         function saveClick() {
             if (validateData())
             {
-                alert(vm.uiState.mode);
                 if (vm.uiState.mode == pageMode.ADD)
                 {
                     insertData();
@@ -94,7 +94,7 @@
                     updateData();
                 }
             }
-
+            console.log("Save Complete ::" + vm.uiState.mode);
         }
 
         function searchImmediate(item) {
@@ -181,7 +181,14 @@
         
         function insertData()
         {
-
+            dataService.post("/api/Product", vm.product)
+                       .then(function (result) {
+                           vm.product = result.data;
+                           vm.products.push(vm.product);                      
+                           setUIState(pageMode.LIST);
+                       }, function (error) {
+                           handleException(error);
+                       });
         }
         function updateData()
         {  
@@ -201,12 +208,32 @@
 
                             setUIState(pageMode.LIST);
                         },
-                        function (error) {
-                            alert("test");
+                        function (error) {                            
                             handleException(error);
                         });
         }
-  
+      
+
+        function deleteData(id) {
+            dataService.delete("/api/Product/" + id)
+                        .then(function (result) {
+                            vm.product = result.data;
+
+                            //Get Index of this product 
+                            var index = vm.products.map(function (p) {
+                                return p.ProductId;
+                            }).indexOf(id);
+
+                            //Remove product in array
+                            vm.products.splice(index, 1);
+
+                            //Set it back List Mode
+                            setUIState(pageMode.LIST);
+                        },
+                        function (error) {
+                            handleException(error);
+                        });
+        }
 
         function validateData()
         {
