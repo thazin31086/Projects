@@ -70,7 +70,8 @@
             vm.product = initEntity();
             setUIState(pageMode.ADD);
         }
-        function editClick(id) {
+        function editClick(id) {            
+            productGet(id);           
             setUIState(pageMode.EDIT);
         }
         function cancelClick() {
@@ -81,7 +82,19 @@
             }
         }
         function saveClick() {
-            setUIState(pageMode.LIST);
+            if (validateData())
+            {
+                alert(vm.uiState.mode);
+                if (vm.uiState.mode == pageMode.ADD)
+                {
+                    insertData();
+                }
+                else
+                {
+                    updateData();
+                }
+            }
+
         }
 
         function searchImmediate(item) {
@@ -129,6 +142,23 @@
                 handleException(error);
             });
         }
+        function productGet(id) {
+            // Call Web API to get a product
+            dataService.get("/api/Product/" + id)
+              .then(function (result) {
+                  // Display product
+                  vm.product = result.data;
+
+                  // Convert date to local date/time format
+                  if (vm.product.IntroductionDate != null) {
+                      vm.product.IntroductionDate =
+                        new Date(vm.product.IntroductionDate).
+                        toLocaleDateString();
+                  }
+              }, function (error) {
+                  handleException(error);
+              });
+        }
 
         function productList() {
             dataService.get("/api/Product")
@@ -148,8 +178,49 @@
                   handleException(error);
               })
         }
-             
         
+        function insertData()
+        {
+
+        }
+        function updateData()
+        {  
+            dataService.put("/api/Product/" +
+                    vm.product.ProductId,
+                    vm.product)
+                        .then(function (result) {
+                            vm.product = result.data;
+                            
+                            //Get Index of this product 
+                            var index = vm.products.map(function (p) {
+                                return p.ProductId;
+                            }).indexOf(vm.product.ProductId);
+                            
+                            //Update product in array
+                            vm.products[index] = vm.product;
+
+                            setUIState(pageMode.LIST);
+                        },
+                        function (error) {
+                            alert("test");
+                            handleException(error);
+                        });
+        }
+  
+
+        function validateData()
+        {
+            var ret = true;
+
+            //fix up date(IE 11 bug workaround)
+            vm.product.IntroductionDate =
+                vm.product.IntroductionDate
+                 .replace(/\u200E/g, '');
+
+            //TODO: Perform Validation here
+            return ret;
+
+        }
         function handleException(error) {
             vm.uiState.isValid = false;
             vm.uiState.messages = [];

@@ -106,4 +106,9 @@ use strict
 - eg/ 
 	x= 3.14; // This will cause an error because x is not declared. 
 
+JSON
+=====
 
+JSON Date are string.
+Javscript does not have a date literal.
+JSON serialize using ISO 8601. eg/2015-11-05T00:00:00
