@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body> 
+ 
+<script>
+var w= 200; 
+var h= 200; 
+var padding = 2; 
+var dataset= [5,10,15,20,25]; 
+var svg = d3.select("body")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h); 
+
+
+svg.selectAll("rect")
+   .data(dataset)
+   .enter()
+   .append("rect")
+       .attr("x", function(d, i){            
+            return i * (w/dataset.length);
+           })
+       .attr("y", function(d){  
+          console.log(d + "result" + (h-d));
+          return h-(d*8);
+        })
+       .attr("width", w/dataset.length -padding)
+       .attr("height", function(d, i){
+           return d*5;  
+        })
+       .attr("fill", function(d, i){             
+             return parseInt(i/2) == 0 ?  "yellow" : "green";
+             })
+ </script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+D3.js 
+=====
+is javascript library that works well with HTML5 and CSS3 to take data and visualize it 
+
+
+SVG - Scalable Vector Graphics 
+------------------------------
+jpeg .gif .pnd are raster and resolution is not great as SVC
+SVG object is html object
+SVG Image has three different Types: 
+	Shapes (Line, circle, bar, polygon), 
+        Filters (special effects like blur, dropdown), 
+        Gradients - to paint svg object
+
+By using D3, you can draw svc by using runtime data pulling from varieties of data source such as api. You can do thing more dynamatically.

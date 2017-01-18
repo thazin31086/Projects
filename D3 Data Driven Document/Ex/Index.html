@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+  
+  <h3 >D3 SVG Text<h3>
+    <span id="D3SVGText"></span>
+    
+    
+  <h3>SVG Circle</h3>
+  <svg id="circlesvg" width="50" height="50">
+     <circle cx="25" cy="25" r="25"
+             style="fill:blue"/>
+  </svg> 
+  
+  <h3>SVG Bar</h3>
+  <svg >
+    <rect width="50" height="200" style="fill:blue"/>
+  </svg>
+  
+  <h3>D3 Bar</h3>
+  <script>
+    
+   d3.select("#D3SVGText")
+   .append("svg")
+     .attr("width", 250)
+     .attr("height", 50)
+   .append("text")
+     .text("Easy Peasy")
+     .attr("y", 20)
+     .attr("x", 0)     
+     .style("fill", "blue")
+     
+     
+    d3.select("body")
+      .append("svg")
+      .append("rect")
+        .attr("width", 50)
+        .attr("height", 200)
+        .style("fill", "blue");
+   
+
+  d3.select("#circlesvg")
+   .append("svg")
+     .attr("width", 50)
+     .attr("height", 50)
+   .append("circle")
+     .attr("cx", 25)
+     .attr("cy", 25)
+     .attr("r", 10)
+     .style("fill", "lightblue")
+  
+ 
+  
+  </script>
+  
+    
+</body>
+</html>
