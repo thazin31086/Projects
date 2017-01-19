@@ -13,3 +13,4 @@ SVG Image has three different Types:
         Gradients - to paint svg object
 
 By using D3, you can draw svc by using runtime data pulling from varieties of data source such as api. You can do thing more dynamatically.
+

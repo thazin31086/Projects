@@ -32,6 +32,9 @@ Maintain State between a Controller
 
  ViewData and ViewBag serve the same purpose, View Data is dictionary object and require typecating and null checks. ViewBag is dynamic property that doesn't have typecasting and null check. ViewBag is dynamic time as it can introduce runtime error. 
 
+ TempData is a dictionary object that stay for the time of an http request. It can be used to maintain data between redirect from one controller and another controller. 
+
+
 What is ASP.NET MVC? 
 --------------------
 
@@ -70,9 +73,64 @@ public void MyNonActionMethod()
     - ContentResult
     - JsonResult
     - EmptyResult
-  
-
  
+ASP.NET MVC Framework
+=====================
+Firstly, client request hit controller and controller decides which model to serve the request. Then, pass the model to view and generate appropiate response that rendered to client. 
+
+
+Role of Model in MVC
+---------------------
+- contains all application logic including validation, business and data logic. 
+- it is responsible for acessing data from medium like data and manipulate it. 
+
+
+ViewEngine in ASP.NET MVC
+--------------------------
+ViewEngine in MVC used to translate our views to HTML and then render to browser. 
+Types:  Razor, Webform, Spark(Open Source), NHaml (Open Source)
+eg/
+public ActionResult Index()
+{
+   return View();
+}
+
+HtmlHelpers
+-----------
+Htmlhelpers serve the same purpose as ASP.NET Web form controller. From implementation point of view, it is a method that returns a string 
+eg, @Html.ActionLink("Webdev Consulting Company", "CompanyInfo")
+will render: 
+<a href="/Site/CompanyInfo">Web Consulting Company</a>
+
+Attribute Routing
+-----------------
+MVC use friendly URLs that are mapped to controller's action
+In MVC, you can use attributes to define routes to better control over the URL. 
+
+eg/ 
+public class publicontroller : controller
+{
+   [Route("Product/{productId?}")]
+   public ActionResult Product(string productId)
+   {
+
+   }
+}
+
+Scaffolding in MVC
+------------------
+Scaffolding is basically a Code Generation Framework. It generate basic controller as well as views for the models using T4 Templates. 
+T4 - Text Template Transformation Toolkit. T4 is template based text generation framework included in Visual Studio. 
+Data validation based on database schema. 
+
+
+Action Filters
+--------------
+If you want to apply specific logic before and after action methods, you can apply action filters. There are four types of action filters can use in MVC 
+eg. Authorization Filters to restrict access to a specific user 
+    Action Filters (eg, outputcache) to cache the output of the controller
+    Result Filter
+    Exception Filter
 
 
 
