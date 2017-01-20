@@ -1,4 +1,6 @@
-﻿Create the database
+﻿Author : This project was downloaded from Pluralsight. "The Journey from MVC to Angular" by Paul D. Sheriff Course and modified by Jasmine Aung 
+
+Create the database
 -------------------
 To create the database and the data for this project, run the \SqlScripts\PTC.SQL in SQL Server
 
