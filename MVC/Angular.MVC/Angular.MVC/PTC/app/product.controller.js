@@ -13,7 +13,7 @@
         vm.products = [];
         vm.product = {};
         vm.categories = [];
-        vm.searchCategories = [];      
+        vm.searchCategories = [];
         vm.searchInput = {
             selectedCategory: {
                 CategoryId: 0,
@@ -26,7 +26,7 @@
         vm.cancelClick = cancelClick;
         vm.deleteClick = deleteClick;
         vm.saveClick = saveClick;
-       
+
 
         const pageMode = {
             LIST: 'List',
@@ -36,10 +36,10 @@
         vm.uiState = {
             mode: pageMode.LIST,
             isDetailAreaVisible: false,
-            isListAreaVisible : true, 
-            isSearchAreaVisible :true, 
-            isValid:true, 
-            messages:[]
+            isListAreaVisible: true,
+            isSearchAreaVisible: true,
+            isValid: true,
+            messages: []
         }
 
         productList();
@@ -70,11 +70,14 @@
             vm.product = initEntity();
             setUIState(pageMode.ADD);
         }
-        function editClick(id) {            
-            productGet(id);           
+        function editClick(id) {
+            productGet(id);
             setUIState(pageMode.EDIT);
         }
-        function cancelClick() {
+        function cancelClick(productForm) {
+            productForm.$setPristine();//reset form
+            productForm.$valid = true;
+            vm.uiState.isValid = true;
             setUIState(pageMode.LIST);
         }
         function deleteClick(id) {
@@ -82,20 +85,25 @@
                 deleteData(id);
             }
         }
-        function saveClick() {
-            if (validateData())
-            {
-                if (vm.uiState.mode == pageMode.ADD)
-                {
-                    insertData();
-                }
-                else
-                {
-                    updateData();
+        function saveClick(productForm) {
+            if (productForm.$valid) {
+                if (validateData()) {
+                    productForm.$setPristine(); //Set Product form to untouch state
+                    if (vm.uiState.mode == pageMode.ADD) {
+                        insertData();
+                    }
+                    else {
+                        updateData();
+                    }
+                } else {
+                    productForm.$valid = false;
                 }
             }
-            console.log("Save Complete ::" + vm.uiState.mode);
+            else {
+                vm.uiState.isValid = false;
+            }
         }
+
 
         function searchImmediate(item) {
             if ((vm.searchInput.selectedCategory.CategoryId == 0 ? true : vm.searchInput.selectedCategory.CategoryId == item.Category.CategoryId) &&
@@ -106,12 +114,12 @@
             return false;
         }
         function search() {
-         
+
             var searchEntity = {
                 CategoryId: vm.searchInput.selectedCategory.CategoryId,
                 ProductName: vm.searchInput.productName
             };
-
+            vm.uiState.isValid = true;
             dataService.post("api/Product/Search", searchEntity).
                 then(function () {
                     vm.products = result.data;
@@ -174,46 +182,42 @@
             dataService.get("/api/Category")
               .then(function (result) {
                   vm.categories = result.data;
-              }, function (error) {                
+              }, function (error) {
                   handleException(error);
               })
         }
-        
-        function insertData()
-        {
+
+        function insertData() {
             dataService.post("/api/Product", vm.product)
                        .then(function (result) {
                            vm.product = result.data;
-                           vm.products.push(vm.product);                      
+                           vm.products.push(vm.product);
                            setUIState(pageMode.LIST);
                        }, function (error) {
                            handleException(error);
                        });
         }
-        function updateData()
-        {  
+        function updateData() {
             dataService.put("/api/Product/" +
                     vm.product.ProductId,
                     vm.product)
                         .then(function (result) {
                             vm.product = result.data;
-                            
+
                             //Get Index of this product 
                             var index = vm.products.map(function (p) {
                                 return p.ProductId;
                             }).indexOf(vm.product.ProductId);
-                            
+
                             //Update product in array
                             vm.products[index] = vm.product;
 
                             setUIState(pageMode.LIST);
                         },
-                        function (error) {                            
+                        function (error) {
                             handleException(error);
                         });
         }
-      
-
         function deleteData(id) {
             dataService.delete("/api/Product/" + id)
                         .then(function (result) {
@@ -235,48 +239,83 @@
                         });
         }
 
-        function validateData()
-        {
-            var ret = true;
-
+        function addValidationMessage(prop, msg) {
+            vm.uiState.messages.push({
+                property: prop,
+                message: msg
+            })
+        }
+        function validateData() {
             //fix up date(IE 11 bug workaround)
             vm.product.IntroductionDate =
                 vm.product.IntroductionDate
                  .replace(/\u200E/g, '');
 
-            //TODO: Perform Validation here
-            return ret;
+            vm.uiState.messages = [];
 
+            if (vm.product.IntroductionDate != null) {
+                if (isNaN(Date.parse(vm.product.IntroductionDate))) {
+                    addValidationMessage('IntroductionDate', 'Invalid Introduction Date');
+                }
+            }
+
+            if (vm.product.Url.toLowerCase().indexOf("microsoft") >= 0) {
+                addValidationMessage('url', 'URL cannot contain the words microsoft');
+            }
+
+            vm.uiState.isValid = (vm.uiState.messages.length == 0);
+
+            return vm.uiState.isValid;
         }
         function handleException(error) {
             vm.uiState.isValid = false;
-            vm.uiState.messages = [];
             var msg = {
                 property: 'Error',
                 message: ''
             };
-           
+
+            vm.uiState.messages = [];
+
             switch (error.status) {
-                case 400:
-                    //bad request
+                case 400:   // 'Bad Request'
+                    // Model state errors
+                    var errors = error.data.ModelState;                 
+
+                    // Loop through and get all 
+                    // validation errors
+                    for (var key in errors) {
+                        for (var i = 0; i < errors[key].length;
+                                i++) {
+                            addValidationMessage(key,
+                                        errors[key][i]);
+                        }
+                    }
+
                     break;
-                case 404:
-                    //Not Found
+
+                case 404:  // 'Not Found'
                     msg.message = 'The product you were ' +
                                   'requesting could not be found';
                     vm.uiState.messages.push(msg);
+
                     break;
-                case 500: //Internal error
-                    msg.message = error.data.ExceptionMessage;
+
+                case 500:  // 'Internal Error'
+                    msg.message =
+                      error.data.ExceptionMessage;
                     vm.uiState.messages.push(msg);
+
                     break;
+
                 default:
-                    msg.message = 'Status:' + error.status +
-                                    ' - Error Message:' +
-                                    error.statusText;
+                    msg.message = 'Status: ' +
+                                error.status +
+                                ' - Error Message: ' +
+                                error.statusText;
                     vm.uiState.messages.push(msg);
+
                     break;
-            }            
+            }
         }
     }
 })();

@@ -1,15 +1,14 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Paul's Training Company Site")]
-[assembly: AssemblyDescription("Paul's Training Company Site")]
+[assembly: AssemblyTitle("Course Management System")]
+[assembly: AssemblyDescription("Course Management System")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("PTC")]
-[assembly: AssemblyProduct("Paul's Training Company Site")]
+[assembly: AssemblyCompany("CMS")]
+[assembly: AssemblyProduct("Course Management System")]
 [assembly: AssemblyCopyright("Copyright © 2015 by PDSA, Inc.")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

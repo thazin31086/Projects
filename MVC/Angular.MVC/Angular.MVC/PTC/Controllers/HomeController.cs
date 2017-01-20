@@ -1,12 +1,12 @@
 ﻿using System.Web.Mvc;
 
-namespace PTC.Controllers
+namespace CMS.Controllers
 {
     public class HomeController : Controller
   {
     public ActionResult Index()
     {
-      PTCViewModel vm = new PTCViewModel();
+      CMSViewModel vm = new CMSViewModel();
 
       vm.HandleRequest();
 
@@ -14,7 +14,7 @@ namespace PTC.Controllers
     }
     
     [HttpPost]
-    public ActionResult Index(PTCViewModel vm)
+    public ActionResult Index(CMSViewModel vm)
     {
       vm.HandleRequest();
 

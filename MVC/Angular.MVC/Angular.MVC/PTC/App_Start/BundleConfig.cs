@@ -1,9 +1,8 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
-namespace PTC
+namespace CMS
 {
-  public class BundleConfig
+    public class BundleConfig
   {
     // For more information on bundling, visit http://go.microsoft.com/fwlink/?LinkId=301862
     public static void RegisterBundles(BundleCollection bundles) {
@@ -24,7 +23,8 @@ namespace PTC
 
       bundles.Add(new StyleBundle("~/Content/css").Include(
                 "~/Content/bootstrap.css",
-                "~/Content/site.css"));
+                "~/Content/site.css",
+                 "~/Content/core.css"));
     }
   }
 }

@@ -1,7 +1,8 @@
-﻿using PTC.Models;
+﻿using CMS.Models;
+using System.Linq;
 using System.Web.Http;
 
-namespace PTC.Controllers_Api
+namespace CMS.Controllers_Api
 {
     public class ProductController : ApiController
     {
@@ -9,7 +10,7 @@ namespace PTC.Controllers_Api
         public IHttpActionResult Get()
         {
             IHttpActionResult ret = null;
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
 
             // throw new ApplicationException("Error in the Get() method");
 
@@ -32,7 +33,7 @@ namespace PTC.Controllers_Api
           ProductSearch searchEntity)
         {
             IHttpActionResult ret = null;
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
 
             // Search for Products
             vm.SearchEntity = searchEntity;
@@ -54,7 +55,7 @@ namespace PTC.Controllers_Api
         {
             IHttpActionResult ret;
             Product prod = new Product();
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
 
             prod = vm.Get(id);
             if (prod != null)
@@ -73,7 +74,7 @@ namespace PTC.Controllers_Api
                Product product)
         {
             IHttpActionResult ret = null;
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
 
             vm.Entity = product;
             vm.PageMode = PageConstants.ADD;
@@ -86,10 +87,28 @@ namespace PTC.Controllers_Api
                         product.ProductId.ToString(),
                           product);
             }
+            else if (vm.Messages.Count > 0)
+            {
+                ret = BadRequest(ConvertToModelState(vm.Messages)); 
+            }
             else {
+
                 ret = NotFound();
             }
 
+            return ret;
+        }
+
+        private System.Web.Http.ModelBinding.ModelStateDictionary ConvertToModelState(System.Web.Mvc.ModelStateDictionary states)
+        {
+            System.Web.Http.ModelBinding.ModelStateDictionary ret = new System.Web.Http.ModelBinding.ModelStateDictionary();
+            foreach (var list in states.ToList())
+            {
+                for (int i = 0; i < list.Value.Errors.Count; i++)
+                {
+                    ret.AddModelError(list.Key, list.Value.Errors[i].ErrorMessage); 
+                }
+            }
             return ret;
         }
 
@@ -98,7 +117,7 @@ namespace PTC.Controllers_Api
                     [FromBody] Product product)
         {
             IHttpActionResult ret = null;
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
 
             vm.Entity = product;
             vm.PageMode = PageConstants.EDIT;
@@ -119,7 +138,7 @@ namespace PTC.Controllers_Api
         public IHttpActionResult Delete(int id)
         {
             IHttpActionResult ret = null;
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
 
             // Get the product
             vm.Entity = vm.Get(id);

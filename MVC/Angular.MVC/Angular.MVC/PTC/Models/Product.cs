@@ -1,4 +1,4 @@
-﻿namespace PTC.Models
+﻿namespace CMS.Models
 {
     using System;
     using System.Collections.Generic;

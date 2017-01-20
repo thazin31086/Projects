@@ -1,4 +1,4 @@
-﻿using PTC.Models;
+﻿using CMS.Models;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -7,12 +7,12 @@ using System.Data.Entity.Validation;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace PTC
+namespace CMS
 {
-    public class PTCViewModel
+    public class CMSViewModel
     {
         #region Constructor
-        public PTCViewModel()
+        public CMSViewModel()
         {
             Init();
         }
@@ -106,7 +106,7 @@ namespace PTC
         #region LoadCategories Method
         public void LoadCategories()
         {
-            PTCContext db = new PTCContext();
+            CMSContext db = new CMSContext();
 
             // Load categories
             var result=  db.Category;
@@ -120,7 +120,7 @@ namespace PTC
 
             string connectionString = ConfigurationManager.ConnectionStrings["PTCEntities"].ToString();           
             
-            PTCContext db = new PTCContext();
+            CMSContext db = new CMSContext();
             
             if (Categories.Count == 0)
             {
@@ -144,7 +144,7 @@ namespace PTC
         #region Get Methods
         public void Get()
         {
-            PTCContext db = new PTCContext();       
+            CMSContext db = new CMSContext();       
             Products = db.Product.OrderBy(p => p.ProductName).ToList();
 
             SetUIState(PageConstants.LIST);
@@ -152,7 +152,7 @@ namespace PTC
 
         public Product Get(int productId)
         {
-            PTCContext db = new PTCContext();
+            CMSContext db = new CMSContext();
 
             Entity = db.Product.Find(productId);
 
@@ -163,7 +163,7 @@ namespace PTC
         #region Search Method
         public void Search()
         {
-            PTCContext db = new PTCContext();
+            CMSContext db = new CMSContext();
 
             // Perform Search
             Products = db.Product.Where(p =>
@@ -225,7 +225,7 @@ namespace PTC
         {
             Messages.Clear();
 
-            PTCContext db = new PTCContext();
+            CMSContext db = new CMSContext();
 
             // Ensure the correct category is set
             Entity.Category = db.Category.Find(Entity.Category.CategoryId);
@@ -268,7 +268,7 @@ namespace PTC
         #region Delete Method
         public void Delete(int productId)
         {
-            PTCContext db = new PTCContext();
+            CMSContext db = new CMSContext();
 
             Product product = db.Product.Find(productId);
 

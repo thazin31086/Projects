@@ -1,6 +1,6 @@
 ﻿using System.Web.Http;
 
-namespace PTC.Controllers_Api
+namespace CMS.Controllers_Api
 {
     public class CategoryController : ApiController
     {
@@ -8,7 +8,7 @@ namespace PTC.Controllers_Api
         public IHttpActionResult GetCategories() {
 
             IHttpActionResult ret = null;
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
             vm.LoadCategories();
             if (vm.Categories.Count > 0)
             {
@@ -25,7 +25,7 @@ namespace PTC.Controllers_Api
         public IHttpActionResult GetSearchCategories()
         {
             IHttpActionResult ret = null;
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
 
             vm.LoadSearchCategories();
             if (vm.SearchCategories.Count > 0)
@@ -41,11 +41,11 @@ namespace PTC.Controllers_Api
 
 
         [HttpPost]
-        [Route("api/Product/Search")]
+        [Route("api/Category/Search")]
         public IHttpActionResult Search(ProductSearch searchEntity)
         {
             IHttpActionResult ret = null;
-            PTCViewModel vm = new PTCViewModel();
+            CMSViewModel vm = new CMSViewModel();
             vm.SearchEntity = searchEntity;
             vm.Search();
 
