@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{7B84A1F2-261D-42EB-8213-ADAB350254B4}"
+	ProjectSection(SolutionItems) = preProject
+		favicon.ico = favicon.ico
+		index.html = index.html
+		package.json = package.json
+		readme.md = readme.md
+		StudyNote.txt = StudyNote.txt
+		systemjs.config.js = systemjs.config.js
+		tsconfig.json = tsconfig.json
+		tslint.json = tslint.json
+		typings.json = typings.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{5A97F6D0-F84E-4280-BF2B-F865C7B18569}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "app", "app", "{B42AC1A7-A4A4-4B49-A194-C8CE267F7DDA}"
+	ProjectSection(SolutionItems) = preProject
+		app\app.component.css = app\app.component.css
+		app\app.component.js = app\app.component.js
+		app\app.component.js.map = app\app.component.js.map
+		app\app.component.ts = app\app.component.ts
+		app\app.module.js = app\app.module.js
+		app\app.module.js.map = app\app.module.js.map
+		app\app.module.ts = app\app.module.ts
+		app\main.js = app\main.js
+		app\main.js.map = app\main.js.map
+		app\main.ts = app\main.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "products", "products", "{5A10EF86-58AA-40A6-A801-E31FE555E800}"
+	ProjectSection(SolutionItems) = preProject
+		api\products\products.json = api\products\products.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "assets", "assets", "{48420FFF-996A-4AD0-85B9-1D3403E5AAC5}"
+	ProjectSection(SolutionItems) = preProject
+		app\shared\star.component.css = app\shared\star.component.css
+		app\shared\star.component.html = app\shared\star.component.html
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "home", "home", "{153153E6-AF56-49C8-B6CA-F867F31BCA85}"
+	ProjectSection(SolutionItems) = preProject
+		app\home\welcome.component.html = app\home\welcome.component.html
+		app\home\welcome.component.js = app\home\welcome.component.js
+		app\home\welcome.component.js.map = app\home\welcome.component.js.map
+		app\home\welcome.component.ts = app\home\welcome.component.ts
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "shared", "shared", "{59977F97-2FF2-44F6-8FDF-88B5024BC3CA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "images", "images", "{B59FC9E6-2A4D-4E3B-A577-46F5779BFE97}"
+	ProjectSection(SolutionItems) = preProject
+		app\assets\images\logo.jpg = app\assets\images\logo.jpg
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5A97F6D0-F84E-4280-BF2B-F865C7B18569} = {7B84A1F2-261D-42EB-8213-ADAB350254B4}
+		{B42AC1A7-A4A4-4B49-A194-C8CE267F7DDA} = {7B84A1F2-261D-42EB-8213-ADAB350254B4}
+		{5A10EF86-58AA-40A6-A801-E31FE555E800} = {5A97F6D0-F84E-4280-BF2B-F865C7B18569}
+		{48420FFF-996A-4AD0-85B9-1D3403E5AAC5} = {B42AC1A7-A4A4-4B49-A194-C8CE267F7DDA}
+		{153153E6-AF56-49C8-B6CA-F867F31BCA85} = {B42AC1A7-A4A4-4B49-A194-C8CE267F7DDA}
+		{59977F97-2FF2-44F6-8FDF-88B5024BC3CA} = {B42AC1A7-A4A4-4B49-A194-C8CE267F7DDA}
+		{B59FC9E6-2A4D-4E3B-A577-46F5779BFE97} = {59977F97-2FF2-44F6-8FDF-88B5024BC3CA}
+	EndGlobalSection
+EndGlobal

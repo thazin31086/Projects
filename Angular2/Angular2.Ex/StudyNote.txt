@@ -1,0 +1,27 @@
+Angular2
+=========
+
+- is a Javscript Framework for Building Client side application using HTML, Css  and Javascript
+- Angular 2 Application contain compoents 
+
+Component - consist of template, class 	(properties, methods) + Metadata(define the additional elements of components)
+
+ECMA Script - Javscript Specification Language
+
+Angular languages
+=================== 
+ES 5, ES 2015 and TypeScript, Dart
+Typescript is the language of choice for many Angular 2 Developers
+
+Typescript - open source, super set of javascript, it transpile to plain javascript., Strongly Typeed. (*.d.ts)
+
+
+TypeScript PlayGround
+https://nodejs.org/en/download/
+npm - node package Manager is command line untility that interact with the repository of open source projects. Npm is package manager for javascript
+
+npm install
+npm start
+
+Transpile - take one source code as input and transform to another scoure code
+Angular Module : solve namespace issue
