@@ -1,6 +1,19 @@
 NUnit 
 =====
-Open Source Test Unit
+Open Source Unit testing Framework. N stand for .NET
 
-Why use? 
-to find defect ealier in the development lifecycle
+Why needed?
+=========== 
+to find defect ealier in the development lifecycle. 
+
+
+Syntax 
+======
+Assert - tell the test runner whether a test has passed or failed
+ --Assert.That(actual, expected)
+ eg/ Assert.That(Calculator.Add(1,2), IsEqualTo(3));
+
+ http://patrickdesjardins.com/blog/failed-to-initialize-the-powershell-host
+
+
+
