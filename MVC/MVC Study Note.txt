@@ -97,7 +97,7 @@ public ActionResult Index()
 
 HtmlHelpers
 -----------
-Htmlhelpers serve the same purpose as ASP.NET Web form controller. From implementation point of view, it is a method that returns a string 
+Htmlhelpers serve the same purpose as ASP.NET Web form controls. From implementation point of view, it is a method that returns a string 
 eg, @Html.ActionLink("Webdev Consulting Company", "CompanyInfo")
 will render: 
 <a href="/Site/CompanyInfo">Web Consulting Company</a>
@@ -132,7 +132,14 @@ eg. Authorization Filters to restrict access to a specific user
     Result Filter
     Exception Filter
 
+ASP.NET Identity
+----------------
+ASP.NET Identity Framework is open source platform to manage access in ASP.NET application. It can be customized according to the requirement. It can be used in ASP.Net Web Forms, MVC, Web API and SignalR. It support multiple storeage system like Relational Database, SharePoint, Azure etc.
 
+SignalR
+------- 
+can be used to add any sort-of "real-time" web functionality to your ASP.NET Application. eg, chatting application, Ajax long polling to retrieve new data.
+http://www.webdevelopmenthelp.net/2015/07/customize-profile-info-in-asp-net-identity.html
 
 
 
