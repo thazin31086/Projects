@@ -12,5 +12,11 @@
             //bug for demo purpose
             return a + b;
         }
+
+        public string MultiplyString(int a, int b)
+        {
+            //bug for demo purpose
+            return $"{a + b}";
+        }
     }
 }
