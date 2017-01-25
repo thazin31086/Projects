@@ -2,6 +2,7 @@ Study Link
 ============
 http://www.webdevelopmenthelp.net/2014/06/asp-net-mvc-pass-data-controller-view.html
 http://www.webdevelopmenthelp.net/2013/09/top-asp-net-mvc-interview-questions.html#Q4
+https://www.codeproject.com/Articles/426766/Custom-Filters-in-MVC-Authorization-Action-Result
 
 MVC 3
  - Support HTML 2 and CSS 3
