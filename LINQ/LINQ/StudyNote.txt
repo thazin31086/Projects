@@ -1,0 +1,36 @@
+Author : Debora Kurata
+http://blogs.msmvps.com/deborahk/
+
+LINQ - Language Integrated Query 
+
+- it allow you to write SQL like query
+- you can use LINQ to query the result and filter the result (eg, searching , sorting, comparing, selecting)
+- LINQ used defer execution, mean query is executed when method is called eg  result = query.FirstorDefault();
+
+Supported Data Sources
+- LINQ To SQL 
+- LINQ to Entities - work with Entity Framework
+- LINQ to Objects - work with in-memoary data (string, array, collection)
+- LINQ to XML - eg (word and excel)
+
+
+LINQ Syntax 
+- Two Types Query, Method
+
+Query Syntax 
+------------
+  - Declarative 
+  - Similar to SQL statement 
+
+  eg var query = from c in customerList 
+				 where c.CustomerId == customerId
+				 select c; 
+
+Method Syntax
+--------------
+   - Methods
+   - In the .NET Framework (System.Linq)
+
+   eg var query = customerList.Where(c => c.CustomerId= customerId); 
+
+ These two types sematically equivalent
