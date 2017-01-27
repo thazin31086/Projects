@@ -1,4 +1,6 @@
-﻿namespace ACM.BL
+﻿using System.Collections.Generic;
+
+namespace ACM.BL
 {
     public class Customer
     {
@@ -8,5 +10,8 @@
 
         public int? CustomerTypeId { get; set; }
         public string EmailAddress { get; set; }
+
+        public List<Invoice> InvoiceList { get; set; }
     }
+  
 }

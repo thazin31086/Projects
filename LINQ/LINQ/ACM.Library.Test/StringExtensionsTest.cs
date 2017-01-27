@@ -1,6 +1,6 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace ACM.Library.Test
+namespace ACM.Library.Tests
 {
     [TestClass]
     public class StringExtensionsTest

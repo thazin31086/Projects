@@ -16,7 +16,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.Library", "ACM.Library\
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{321BE264-2F16-4FB7-A9D5-D5D34C390437}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.Library.Test", "ACM.Library.Test\ACM.Library.Test.csproj", "{0025B6D8-9FCD-4960-AD0B-A4BC712D7BE8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACM.Library.Tests", "ACM.Library.Test\ACM.Library.Tests.csproj", "{0025B6D8-9FCD-4960-AD0B-A4BC712D7BE8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
