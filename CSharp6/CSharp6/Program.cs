@@ -70,6 +70,8 @@ namespace CSharp6
 
         static void Main(string[] args)
         {
+            Write(typeof(string).Assembly.ImageRuntimeVersion);
+
             /*
             //String Interpolation example with variable 
             var name = "Thazin";

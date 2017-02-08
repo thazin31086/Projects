@@ -1,0 +1,17 @@
+Why Css Painful?
+================
+- No Calculatons 
+- Duplication Issues
+
+Less and SASS - can style sheets more readable, maintainable and easier to write. 
+Less - extends CSS, adding features that allow variables, mixins, function. 
+
+Webkit - the html/css rendering engine used in Apple's safari browser and Google Chrome
+
+Knowledge 
+==========
+
+Google Fonts Link
+-----------------
+https://fonts.google.com/
+

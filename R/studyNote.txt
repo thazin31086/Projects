@@ -1,0 +1,10 @@
+MVC and R Project
+----------
+https://www.simple-talk.com/dotnet/asp-net/creating-a-business-intelligence-dashboard-with-r-and-asp-net-mvc-part-1/
+
+Download
+-----------
+- Install R 
+https://www.r-project.org/
+- Install R studio
+https://www.rstudio.com/products/rstudio/download/
