@@ -1,13 +1,4 @@
 ﻿C# 6 
-Layer Architecture 
-===================
-
-Layer architecture separates the application into logical components that are easier to create, change, extend 
-and maintain. It make the code component easier to reuse
-
-Unit Testing 
-=============
-Higher quality code, faster and easier debugging and they are repeatable over the life of the application. 
 
 Namespace 
 =========
@@ -40,7 +31,6 @@ PascalCase - Constants, Properties use pascalcase
 
 Class
 =====
-- a class is a specification of a set of data and the operations that act upon the data.
 - class is a reference type, it includes methods and properties. 
   An instance of a class is called object
 
@@ -225,7 +215,6 @@ Abstract class :
  = abstract class cannot be instantiated. has at least one abstract method 
 
 Concrete class:
-  - a class  is template, specifies  the traits or data, specifies the behavior or operations
  - act as base to other classes  
  - can be initiated
  - cannot hae abstract methods
@@ -256,52 +245,3 @@ Eg, when you attached the delegate event to button, button does not nee to know 
 LINQ - Language Integrated Query
 =====
 Operator -> Zip used to product sequence of results from two corresponding sequence.
-
-Expression Bordies Properties 
-==============================
-eg/
-public string FullName 
-{
-  get {return FirstName + " " + LastName};
-}
-
-Equal Syntax Shortcut
----------------------
-public string FullName => FirstName + " " + LastName;
-
-
-Boxing vs Unboxing 
-===================
-http://www.technologycrowds.com/2013/08/box-and-unboxing-in-aspnet_20.html
-Boxing is the process of coverting value type to Object Type
-Unboxing is the reverse process 
-
-Boxing Eg/ 
-int i; 
-i = 78
-Object o = i; 
-
-Unboxing eg/ 
-Int i; 
-Object o; 
-o =8; 
-i = 0; 
-
-https://social.msdn.microsoft.com/Forums/vstudio/en-US/2aee3645-a134-46bc-8cb8-44affb346c2c/what-are-the-benefits-of-boxing-and-unboxing?forum=csharpgeneral
-Why use : Sometime it is unavoidable in some cases. In below example function accept parameter by reference object. 
-eg. 
-
-
-public object CalculateSimpleInterest(re object principalAmount)
-{
-   return (2 * 5 (double)principalAmount)/100;
-} 
-
-object principalAmount = 1500.00; //Boxing
-object SimpleInterest = (double)CalculateSimpleInterest(ref SimpleInterest);// Unboxing
-
-
-Mutable(Can Change) vs Immutable(Cannot Change) 
-================================================
-
-Mutable  

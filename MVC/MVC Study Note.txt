@@ -143,24 +143,4 @@ can be used to add any sort-of "real-time" web functionality to your ASP.NET App
 http://www.webdevelopmenthelp.net/2015/07/customize-profile-info-in-asp-net-identity.html
 
 
-What is Katana and OWIN? 
-
-Katana is new web framework that build on specifiation named called OWIN (Open Web Server Interface for .NET). Katana is the Microsoft 
-implementation of OWIn. 
-it provoid light weight piece of software that you can use to build web applications, websites and API 
-Katana can implement the OWIN Specification and  use System.Web Behind the scenes. Meaning an application might reply on System.Web but only 
-indirectly if it's using OWIN Interfaces. So you can run in any enviroment where OWIN is supported by server,not just IIS also self-hosted 
-environment like console application, server running on Mono, the open source implementation of .NET
-Smaller components compare to System.Web. System.Web contains a lot of great features. But it tited
-to ASP.NET and IIS as it is not so great when it comes to quickly iterating and releasing new features. 
-Katan is focused on small components that you can put together only web component need. 
-
-
-Mono Project 
-===========
-https://en.wikipedia.org/wiki/Mono_(software)
-
-Mono is a free and open source project led by Xamarin. The purpose of mono is not only to be able to 
-Microsoft .NET application cross-platform, also to bring better development tools to Linux developers. 
-it can run on many software system including Android, Berkeley Software Distribution, Linux distributions, Mac, Xbox 360, Windows
 
