@@ -8,3 +8,26 @@ Download
 https://www.r-project.org/
 - Install R studio
 https://www.rstudio.com/products/rstudio/download/
+
+Standard deviation(S)
+  calculation link : 
+  http://statistics.about.com/od/Formulas/a/Sum-Of-Squares-Formula-Shortcut.htm
+  eg link http://examples.yourdictionary.com/examples-of-standard-deviation.html
+- it measure how spread out data from the mean eg(math score varience, the higher no the bigger variance)
+
+
+Type of Statistical Models 
+- Probability Density Function - is a function, used to specify the probality of ramdon variable falling withing a particular range of values. 
+- Analysis of variance - is a statistical method used to test the degress to which two ore more groups vary or differ in an experience. 
+                     Eg, Null Hypothesis - mean no differences between groups and no significant results will be revealed
+                         Alternative Hypothesis - difference between groups 
+                     Link : https://www.youtube.com/watch?v=-yQb_ZJnFXw&feature=youtu.be, http://study.com/academy/lesson/analysis-of-variance-anova-examples-definition-application.html
+     
+- Simple linear regression  - statistical method to study relationships between two variable (x - independent variable(Explanatory variable), y - dependent variable(outcome))
+                            - a straight line that attempts to predict the relationship between two points
+                             - a regression line is one way of predicting information and finding a correlation in the data
+              link : https://www.youtube.com/watch?v=zPG4NjIkCjc
+                    http://study.com/academy/lesson/simple-linear-regression-definition-formula-examples.html
+              eg . temperature drop people put on more jacket
+- Non-linear regression 
+- Bayesian network
