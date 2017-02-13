@@ -2,12 +2,19 @@ MVC and R Project
 ----------
 https://www.simple-talk.com/dotnet/asp-net/creating-a-business-intelligence-dashboard-with-r-and-asp-net-mvc-part-1/
 
+
+Data Science with R by Matthew Renze
+
 Download
 -----------
 - Install R 
 https://www.r-project.org/
 - Install R studio
 https://www.rstudio.com/products/rstudio/download/
+
+Descriptive Statistics 
+------------------------
+are statistics that quantitatively describe or summarize features of a collection of information. 
 
 Standard deviation(S)
   calculation link : 
@@ -31,3 +38,44 @@ Type of Statistical Models
               eg . temperature drop people put on more jacket
 - Non-linear regression 
 - Bayesian network
+
+What is Machine Learning? 
+ - It essentially captures the essence of what we're attempting to accomplish. 
+ - It need large amount of data high-quality data to build accurate machine-learning models. 
+ - All machine learning model are based on statiscs. It applied statistical methods and theory. 
+ - As, it is similar to data mining and statisical modelling.
+ - It used a training algorithm to estimate. 
+
+
+
+What can machine learning do?
+- Classification - it can predit the categorical values.
+- Regression - linear regression 
+- Clustering - trying to group flowers by similar sizes, shapes and colors, 
+	      segmenting our customes into various groups based on demographics.
+- Anomaly detection - detect they are abnormal. eg. detecting credit card fraud
+
+Types of Machine Learning?
+- Supervised Learning - add label as input using Classification and regression. 
+		eg predicting a numeric value when we built our linear regression
+- Unsupervised learning - find patterns in the data. eg. clustering
+
+
+Deploying to Production 
+=======================
+Shiny : A web application framework for R. Turn you analyses into interactive web application. 
+
+
+Where to go next 
+===============
+Pluralsight 
+  - R Programming Fundamentals 
+  - R Studio : Get Started
+  - Exploratory Data Analysis with R 
+  - Understanding Machine Learning with R 
+
+Blog & Community
+  - http://blog.revolutionanalytics.com/
+  - https://www.r-bloggers.com/
+  - http://flowingdata.com/
+  - http://r-exercises.com/
