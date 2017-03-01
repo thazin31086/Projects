@@ -8,9 +8,14 @@ namespace Alog.Con
     {
         static void Main(string[] args)
         {
+            LongestRisingSequence();
+        }
+
+        public static void LongestRisingSequence()
+        {
             #region "Longest Rising Seqence"
-            int[] a = { 1, 2, 3, -1, -2, -3, 9, 4,6,7, 9 };
-            Console.WriteLine("Start Indexes & length of Rising Sequence of Array int[] a = { 1, 2, 3, -1, -2, -3, 9, 4,6,7}");                
+            int[] a = { 1, 2, 3, -1, -2, -3, 9, 4, 6, 7, 9 };
+            Console.WriteLine("Start Indexes & length of Rising Sequence of Array int[] a = { 1, 2, 3, -1, -2, -3, 9, 4,6,7}");
             Dictionary<int, int> result = new Dictionary<int, int>();
 
             if (GetStartIndex(a) != null)
@@ -20,14 +25,14 @@ namespace Alog.Con
                 Console.WriteLine("Result (Start Index, Length):");
                 result.ToList().ForEach(i => Console.WriteLine($"Start Index : {i.Key} , Length : {i.Value}"));
 
-                Console.WriteLine("------------------"); 
+                Console.WriteLine("------------------");
 
                 Console.WriteLine("Longest Rising sequence:");
                 int max = result.Values.Max();
 
                 Console.WriteLine($"Longest Length is : {max}");
                 Console.Write($"Start Indexes are ");
-                result.Where(x => max.Equals(x.Value)).Select(x => x.Key).ToList().ForEach(i => Console.Write(i + ","));                
+                result.Where(x => max.Equals(x.Value)).Select(x => x.Key).ToList().ForEach(i => Console.Write(i + ","));
             }
             else
             {
