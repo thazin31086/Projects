@@ -1,0 +1,45 @@
+/*Boostrap css customize*/
+.navbar.navbar-default
+{
+   background-color: #ce4844;
+}
+
+.navbar-default .navbar-brand, .navbar-default .navbar-nav > li > a {
+    color: #ffffff;
+}
+
+/*--------------custom css----------------------------*/
+
+/*****Text - Formatting****/
+.center{
+  text-align: center;
+}
+
+
+/*****Div - Formatting****/
+
+/*Welcome Page Div*/
+.welcome-div {    
+    padding: 20px;   
+    border: 1px solid #eee;    
+    border-left-color: #ce4844;
+    border-left-width: 10px;   
+    border-right-color: #ce4844;
+    border-right-width: 10px;
+    border-radius: 50px;
+}
+
+/*Product List Row*/
+.product-list-tr {    
+    padding: 20px;   
+    border: 1px solid #eee;    
+    border-left-color: #ce4844;
+    border-left-width: 10px;  
+    border-radius: 10px;
+}
+
+/*****Icon - Formatting****/
+.glyphicon.glyphicon-star
+{
+  color: #DAA520;
+}

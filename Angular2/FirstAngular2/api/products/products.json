@@ -1,52 +1,52 @@
 [
     {
         "productId": 1,
-        "productName": "Leaf Rake",
-        "productCode": "GDN-0011",
-        "releaseDate": "March 19, 2016",
-        "description": "Leaf rake with 48-inch wooden handle.",
+        "productName": "Arrival",
+        "director": "Denis Villeneuve",
+        "releaseDate": "Year 2016",
+        "description": "When twelve mysterious spacecraft appear around the world, linguistics professor Louise Banks is tasked with interpreting the language of the apparent alien visitors.",
         "price": 19.95,
         "starRating": 3.2,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/26215/Anonymous_Leaf_Rake.png"
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BMTExMzU0ODcxNDheQTJeQWpwZ15BbWU4MDE1OTI4MzAy._V1_SY1000_CR0,0,640,1000_AL_.jpg"
     },
     {
         "productId": 2,
-        "productName": "Garden Cart",
-        "productCode": "GDN-0023",
-        "releaseDate": "March 18, 2016",
-        "description": "15 gallon capacity rolling garden cart",
+        "productName": "Collide",
+        "director": "Eran Creevy",
+        "releaseDate": "May 21, 2016",
+        "description": "An American backpacker gets involved with a ring of drug smugglers as their driver, though he winds up on the run from his employers across Cologne high-speed Autobahn.",
         "price": 32.99,
         "starRating": 4.2,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/58471/garden_cart.png"
+        "imageUrl": "https://images-na.ssl-images-amazon.com/images/M/MV5BNjRhMGI3ZGItZTMzMS00NzdmLWI1MzMtNjk0ZmY5ZjMyZDdkL2ltYWdlXkEyXkFqcGdeQXVyNTQ3MjE4NTU@._V1_SY1000_CR0,0,674,1000_AL_.jpg"
     },
     {
         "productId": 5,
-        "productName": "Hammer",
-        "productCode": "TBX-0048",
-        "releaseDate": "May 21, 2016",
-        "description": "Curved claw steel hammer",
+        "productName": "Morgan",
+        "director": "Luke Scott",
+        "releaseDate": "September 2, 2016",
+        "description": "A corporate risk-management consultant must decide whether or not to terminate an artificially created humanoid being.",
         "price": 8.9,
         "starRating": 4.8,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/73/rejon_Hammer.png"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/1/15/Morgan_film_poster.jpg"
     },
     {
         "productId": 8,
-        "productName": "Saw",
-        "productCode": "TBX-0022",
-        "releaseDate": "May 15, 2016",
-        "description": "15-inch steel blade hand saw",
+        "productName": "Passengers",
+        "director": "Morten Tyldum",
+        "releaseDate": "December 14, 2016",
+        "description": "Passengers is a 2016 American science fiction adventure film directed by Morten Tyldum and written by Jon Spaihts. It stars Jennifer Lawrence, Chris Pratt, Michael Sheen, Laurence Fishburne and Andy García. The film tells about two people who wake up 90 years too soon from an induced hibernation on board a spaceship bound for a new planet.",
         "price": 11.55,
         "starRating": 3.7,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/27070/egore911_saw.png"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/8/8e/Passengers_2016_film_poster.jpg"
     },
     {
         "productId": 10,
-        "productName": "Video Game Controller",
-        "productCode": "GMG-0042",
-        "releaseDate": "October 15, 2015",
-        "description": "Standard two-button video game controller",
+        "productName": "La La Land",
+        "director": "Damien Chazelle",
+        "releaseDate": "August 31, 2016",
+        "description": "La La Land is a 2016 American musical romantic comedy-drama film written and directed by Damien Chazelle, and starring Ryan Gosling and Emma Stone as a musician and an aspiring actress who meet and fall in love in Los Angeles. The film's title refers both to the city of Los Angeles and to the idiom for being out of touch with reality.",
         "price": 35.95,
         "starRating": 4.6,
-        "imageUrl": "http://openclipart.org/image/300px/svg_to_png/120337/xbox-controller_01.png"
+        "imageUrl": "https://upload.wikimedia.org/wikipedia/en/a/ab/La_La_Land_%28film%29.png"
     }
 ]
