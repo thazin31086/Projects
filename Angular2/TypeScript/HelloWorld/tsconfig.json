@@ -1,0 +1,6 @@
+/* This is the json file that configure Typescript options. Option to configure compliler options */
+{
+    "compilerOptions": {
+        "target": "ES5"
+    }
+}
